@@ -238,17 +238,17 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bcrypt-ruby
-  carrierwave
-  fog
-  haml
-  pg
+  bcrypt-ruby (= 3.1.5)
+  carrierwave (= 0.10.0)
+  fog (= 1.28.0)
+  haml (= 4.0.6)
+  pg (= 0.18.1)
   rails (= 4.2.0)
   rails_12factor
   rails_on_heroku
-  rmagick
-  sass-rails
-  sqlite3
-  turbolinks
-  uglifier
-  unicorn
+  rmagick (= 2.13.4)
+  sass-rails (= 5.0.1)
+  sqlite3 (= 1.3.10)
+  turbolinks (= 2.5.3)
+  uglifier (= 2.7.1)
+  unicorn (= 4.8.3)
