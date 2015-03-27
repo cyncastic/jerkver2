@@ -1,0 +1,30 @@
+!!! 5
+%html
+
+  %head
+
+    %title Jerkface v2
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true 
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true 
+    = csrf_meta_tags 
+    %meta{ name: "viewport", content: "width=device-width, user-scalable=no"}
+
+  %body
+
+    .container{ role: 'main' }
+
+      %header.header
+
+        %h1= link_to 'Jerkface', root_url
+
+        %nav.nav
+          %ul
+            %li.nav-link= link_to 'Artwork', artwork_url
+            %li.nav-link= link_to 'Instagram', instagram_url
+            %li.nav-link= link_to 'Photos', photos_url
+            %li.nav-link= link_to 'Contact', contact_url
+
+      .content
+        - if notice
+          %p.notice= notice
+        = yield
