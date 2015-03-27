@@ -14,17 +14,19 @@
     .container{ role: 'main' }
 
       %header.header
-
         %h1= link_to 'Jerkface', root_url
-
         %nav.nav
           %ul
-            %li.nav-link= link_to 'Artwork', artwork_url
-            %li.nav-link= link_to 'Instagram', instagram_url
-            %li.nav-link= link_to 'Photos', photos_url
-            %li.nav-link= link_to 'Contact', contact_url
+            %li.nav-link= link_to 'Work', artwork_path, class: cp(artwork_path)
+            %li.nav-link= link_to 'Instagram', instagram_path, class: cp(instagram_path)
+            %li.nav-link= link_to 'Photos', photos_path, class: cp(photos_path)
+            %li.nav-link= link_to 'Abstract', abstract_path, class: cp(abstract_path)
+            %li.nav-link= link_to 'Contact', contact_path, class: cp(contact_path)
 
       .content
         - if notice
           %p.notice= notice
         = yield
+
+    %footer.footer
+      %p &copy; jerkface 2015
