@@ -89,12 +89,17 @@
     }
   }
 
-  .nav{
-    .current{
-      color: $grey-dark;
-    }
+  .current{ color: $grey-dark; }
+
+  .nav-link{
     .vowel{
-      color: $pink;
+      color: #ed1d7a;
+      display: inline-block;
+      opacity: 0;
+      transition: all .125s ease-in-out;
+    }
+    &:hover .vowel{
+      opacity: 1;
     }
   }
 
@@ -115,7 +120,7 @@
 
   .nav{
     > ul li {
-      display: inline-block;
+      display: inline;
       &:after{
         content: " /";
         color: $grey-med;
@@ -130,17 +135,16 @@
 
 
   .footer{
-      color: #999;
-      line-height: 4em;
-      background: #e0e0e0;
-      > p{
-        font-size: .5em;
-        text-align: right;
-        width: $cols20;
-        margin: 0 auto;
-      }
+    color: #999;
+    line-height: 4em;
+    background: #e0e0e0;
+    > p{
+      font-size: .5em;
+      text-align: right;
+      width: $cols20;
+      margin: 0 auto;
     }
-
+  }
 
 
 
@@ -153,8 +157,6 @@
       //margin: .5em;
     }
   }
-
-
 
 
 
