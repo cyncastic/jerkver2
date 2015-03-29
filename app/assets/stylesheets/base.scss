@@ -1,5 +1,7 @@
 //---------------------------------------------------------------------------------------------
-//  FRAMESLESS
+//  Frameless Grid
+//---------------------------------------------------------------------------------------------
+
   $font-size: 16px;     // Your base font-size in pixels
   $em: $font-size / 1em;  // Shorthand for outputting ems
 
@@ -42,39 +44,70 @@
   // Grid Background;
   $grid-light: snow;
   $grid-dark:  beige;
+  $grid-light: #fafafa;
+  $grid-dark:  #f5f5f5;
 
   html{
     min-height: 100%;
     background-image: linear-gradient(to right, $grid-light, $grid-light $gutter, $grid-dark $gutter, $grid-dark $column, $grid-light $column);
     background-size: ($column + $gutter) $column;
     background-position: center;
-
-    background: #f7f7f0;
   }
 
-
-  $grey-light: lighten(#a0a09e, 20%);
-  $grey-med: #a0a09e;
-  $grey-dark: darken(#a0a09e, 20%);
 
 //---------------------------------------------------------------------------------------------
-//  STRUCTURE
-  *, *:before, *:after { box-sizing: border-box; }
+//  Colors
+//---------------------------------------------------------------------------------------------
 
-  hr{
-    border: 1px solid $grey-light; border-bottom: none;
-    margin: 1.5em 1.5em;
-  }
+  $grey-light: #f0f0f0;
+  $grey-med:   #a0a09e;
+  $grey-dark:  #808080;
 
-  .header{
-    line-height: 4em;
-    display: flex;
-    justify-content: space-between;
+  $blue:       #1eb1d7; 
+  $pink:       #ed1d7a;
+  $green:      #b9d548;
+  $yellow:     #fdf235;
+
+
+//---------------------------------------------------------------------------------------------
+//  Typography
+//---------------------------------------------------------------------------------------------
+
+  @import url(http://fonts.googleapis.com/css?family=Open+Sans:700,400);
+  
+  body{ 
+    font-size: 16px / $em;
+    line-height: 24px / $em;
+    font-family: 'Open Sans', sans-serif;
+    color: $grey-dark;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
     a{ 
       text-decoration: none;
       text-transform: uppercase;
       color: $grey-med;
     }
+  }
+
+  .nav{
+    .current{
+      color: $grey-dark;
+    }
+    .vowel{
+      color: $pink;
+    }
+  }
+
+//---------------------------------------------------------------------------------------------
+//  Layout
+//---------------------------------------------------------------------------------------------
+
+  *, *:before, *:after { box-sizing: border-box; }
+
+  .header{
+    line-height: 4em;
+    display: flex;
+    justify-content: space-between;
     & h1::after{
       content: '☠'; padding-left: .5em;
     }
@@ -91,51 +124,50 @@
       }
       &:last-child:after { content: none; }
     }
-    .current{
-      color: $grey-dark;
+    
+  }
+
+
+
+  .footer{
+      color: #999;
+      line-height: 4em;
+      background: #e0e0e0;
+      > p{
+        font-size: .5em;
+        text-align: right;
+        width: $cols20;
+        margin: 0 auto;
+      }
+    }
+
+
+
+
+  #instafeed{
+    display: flex;
+    //flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    img{
+      //margin: .5em;
     }
   }
 
 
 
-.footer{
-  color: #999;
-  line-height: 4em;
-  background: #e0e0e0;
-  > p{
-    font-size: .5em;
-    text-align: right;
-    width: $cols20;
+
+
+  .container[role="main"]{
+    width: $cols10;
     margin: 0 auto;
+    min-height: 100vh;
   }
-}
 
 
-
-
-#instafeed{
-  display: flex;
-  //flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  img{
-    //margin: .5em;
-  }
-}
-
-
-
-
-
-.container[role="main"]{
-  width: $cols10;
-  margin: 0 auto;
-  min-height: 100vh;
-}
-
-
-
-
+//---------------------------------------------------------------------------------------------
+//  Media Queries
+//---------------------------------------------------------------------------------------------
 
 
 

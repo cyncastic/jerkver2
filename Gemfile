@@ -6,11 +6,12 @@ gem 'rails', '4.2.0'
 
 gem 'haml',  '4.0.6'
 gem 'sass-rails', '5.0.1'
+
 gem "autoprefixer-rails"
 
-gem 'uglifier',  '2.7.1'
+gem "jquery-rails"
 
-gem 'turbolinks', '2.5.3'
+gem 'uglifier',  '2.7.1'
 
 gem 'bcrypt-ruby', '3.1.5'
 
