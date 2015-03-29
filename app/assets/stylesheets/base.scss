@@ -61,7 +61,7 @@
 
   $grey-light: #f0f0f0;
   $grey-med:   #a0a09e;
-  $grey-dark:  #808080;
+  $grey-dark:  #333;
 
   $blue:       #1eb1d7; 
   $pink:       #ed1d7a;
@@ -89,17 +89,21 @@
     }
   }
 
-  .current{ color: $grey-dark; }
 
   .nav-link{
     .vowel{
-      color: #ed1d7a;
+      color: #333;
       display: inline-block;
+      transition: all .05125s ease-in-out;
       opacity: 0;
-      transition: all .125s ease-in-out;
     }
-    &:hover .vowel{
+    &:hover .vowel{ opacity: 1; }
+  }
+  .current{ 
+    color: $grey-dark;
+    .vowel{
       opacity: 1;
+      display: inline;
     }
   }
 

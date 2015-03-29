@@ -1,5 +1,6 @@
 $(document).ready(function($) {
 
+
   // add a class of 'vowel' to each vowel using regex
   $(".nav-link a").each( function() {
     $(this).html(
@@ -7,10 +8,12 @@ $(document).ready(function($) {
     );
   });
 
-  $(".vowel").each( function() {    
+
+  $(".vowel").each( function() {   
+
     var myVowel = $(this);
+
     myVowel.data('width', myVowel.width());
-    myVowel.width(0);
 
     myVowel.parent().hover( 
       function(){
@@ -19,7 +22,9 @@ $(document).ready(function($) {
         myVowel.width(0);
       }
     );
-    
+
+    myVowel.width(0);
+
   });
   
 });
