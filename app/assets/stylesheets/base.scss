@@ -61,7 +61,7 @@
 
   $grey-light: #f0f0f0;
   $grey-med:   #a0a09e;
-  $grey-dark:  #333;
+  $grey-dark:  #555;
 
   $blue:       #1eb1d7; 
   $pink:       #ed1d7a;
@@ -91,21 +91,34 @@
 
 
   .nav-link{
-    .vowel{
-      color: #333;
-      display: inline-block;
-      transition: all .05125s ease-in-out;
-      opacity: 0;
+    display: inline;
+    &:after{
+      content: " /";
+      color: $grey-med;
     }
-    &:hover .vowel{ opacity: 1; }
-  }
-  .current{ 
-    color: $grey-dark;
-    .vowel{
-      opacity: 1;
-      display: inline;
+    &:last-child:after { content: none; }
+
+    > a{
+      .vowel{
+        color: $blue;
+        display: inline-block;
+        transition: all .2s cubic-bezier(1.000, -0.195, 0.000, 1.215);
+        opacity: 0;
+      }
+      &:hover .vowel{ opacity: 1; }
+      &.current{ 
+        color: $grey-dark;
+        .vowel{
+          opacity: 1;
+          display: inline;
+        }
+      }
     }
   }
+
+
+    
+
 
 //---------------------------------------------------------------------------------------------
 //  Layout
@@ -122,19 +135,7 @@
     }
   }
 
-  .nav{
-    > ul li {
-      display: inline;
-      &:after{
-        content: " /";
-        color: $grey-med;
-        display: inline;
-        padding: 0;
-      }
-      &:last-child:after { content: none; }
-    }
-    
-  }
+  
 
 
 
