@@ -181,6 +181,37 @@
   }
 
 
+
+
+
+#homer1{  animation: test 25s  infinite ; }
+#homer2{  animation: test 14s  infinite ; }
+#homer3{  animation: test 10s  infinite ; }
+#homer4{  animation: test 20s  infinite ; }
+#homer5{  animation: test 20s  infinite ; }
+#homer6{  animation: test 30s  infinite ; }
+#homer7{  animation: test 10s  infinite ; }
+#homer8{  animation: test 20s  infinite ; }
+#homer9{  animation: test 40s  infinite ; }
+#homer10{ animation: test 20s  infinite ; }
+#homer11{ animation: test 10s  infinite ; }
+
+
+@keyframes test{
+  0%   { opacity:  .0 ; transform: scale(2); }
+  33%  { opacity:  .5 ; }
+  50%  { opacity:  .2 ; }
+  66%  { opacity: 1   ; }
+  100% { opacity:  .0 ; transform: scale(.5); }
+}
+
+
+
+
+
+
+
+
 //---------------------------------------------------------------------------------------------
 //  Media Queries
 //---------------------------------------------------------------------------------------------
