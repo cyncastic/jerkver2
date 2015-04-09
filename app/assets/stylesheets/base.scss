@@ -122,7 +122,6 @@
   }
 
 
-    
 
 
 //---------------------------------------------------------------------------------------------
@@ -132,28 +131,28 @@
   *, *:before, *:after { box-sizing: border-box; }
   img{ vertical-align: middle; }
 
+
   .header{
     line-height: 4em;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
-    h1{ font-size: 3em;}
-    & h1::after{
-      content: '☠'; padding-left: .5em;
-    }
+    > h1{ font-size: 3em; }
   }
 
-  
-
-
+  .container[role="main"]{
+    width: $cols5;
+    margin: 0 auto;
+    min-height: 95vh;
+  }
 
   .footer{
     color: #999;
-    line-height: 4em;
+    line-height: 5vh;
     background: #e0e0e0;
     > p{
-      font-size: .5em;
+      font-size: .75em;
       text-align: right;
       margin: 0 $gutter 0 0;
     }
@@ -161,48 +160,45 @@
 
 
 
-  #instafeed{
-    display: flex;
-    //flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    img{
-      width: $cols2;
-      margin-bottom: $gutter; 
+
+//---------------------------------------------------------------------------------------------
+//  Pages
+//---------------------------------------------------------------------------------------------
+
+  // Contact
+    .contact-email{
+      text-align: center;
+      font-size: 1.66em;
     }
-  }
+
+  // Instagram
+    #instafeed{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      img{
+        width: ($cols5 / 2) - ($gutter/2)/$em;
+        margin-bottom: $gutter; 
+      }
+    }
 
 
+  // Index page animation
 
-  .container[role="main"]{
-    width: $cols6;
-    margin: 0 auto;
-    min-height: 100vh;
-  }
+    .svg-container{
+      * { fill: #fff; }
+    }
+    .svg-poly{  }
+    .svg-circ1{ animation: drip1 3.3s infinite cubic-bezier(1.000, -0.070, 0.680, 0.530); }
+    .svg-circ2{ animation: drip2 2.1s infinite cubic-bezier(1.000, -0.070, 0.680, 0.530); }
+    .svg-circ3{ animation: drip3 2.9s infinite cubic-bezier(1.000, -0.070, 0.680, 0.530); }
+
+    @keyframes drip1{ 100%{ opacity: 0; transform: translateY(200px); }}
+    @keyframes drip2{ 100%{ opacity: 0; transform: translate( 30px, 200px); }}
+    @keyframes drip3{ 100%{ opacity: 0; transform: translate(-30px, 200px); }}
 
 
-
-// Contact
-  .contact-email{
-    text-align: center;
-    font-size: 1.66em;
-  }
-
-
-// Index page animation
-
-  .svg-container{
-    filter:url("#fancy-goo"); 
-    * { fill: #ccc; }
-  }
-  .svg-poly{  }
-  .svg-circ1{ animation: drip1 3.3s infinite cubic-bezier(1.000, -0.070, 0.680, 0.530); }
-  .svg-circ2{ animation: drip2 2.1s infinite cubic-bezier(1.000, -0.070, 0.680, 0.530); }
-  .svg-circ3{ animation: drip3 2.9s infinite cubic-bezier(1.000, -0.070, 0.680, 0.530); }
-
-  @keyframes drip1{ 100%{ opacity: 0; transform: translateY(200px); }}
-  @keyframes drip2{ 100%{ opacity: 0; transform: translate( 30px, 200px); }}
-  @keyframes drip3{ 100%{ opacity: 0; transform: translate(-30px, 200px); }}
 
 
 //---------------------------------------------------------------------------------------------
