@@ -1,0 +1,11 @@
+// Instagram
+    #instafeed{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      img{
+        width: ($cols5 / 2) - ($gutter/2)/$em;
+        margin-bottom: $gutter; 
+      }
+    }
