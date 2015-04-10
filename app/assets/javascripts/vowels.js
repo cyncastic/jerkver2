@@ -29,5 +29,11 @@ $(document).ready(function($) {
     myVowel.width(0);
 
   });
+
+  $('.nav-link a').click( function(){
+    console.log('adf');
+    $('.nav-link a').removeClass('current');
+    $(this).addClass('current');
+  });
   
 });

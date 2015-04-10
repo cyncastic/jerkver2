@@ -4,14 +4,14 @@
   %head
 
     %title Jerkface v2
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false 
-    = javascript_include_tag 'application', 'data-turbolinks-track' => false 
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
     = csrf_meta_tags 
     %meta{ name: 'viewport', content: 'initial-scale=1, user-scalable=no' }
 
   %body
-
-    .container{ role: 'main' }
+    .time= Time.now.getutc
+    .container{ role: 'main'}
 
       %header.header
         %h1= link_to 'Jerkface', root_url
@@ -23,7 +23,7 @@
             %li.nav-link= link_to 'Abstract', abstract_path, class: cp(abstract_path)
             %li.nav-link= link_to 'Contact', contact_path, class: cp(contact_path)
 
-      .content
+      .content(data-pjax-container)
         - if notice
           %p.notice= notice
         = yield
