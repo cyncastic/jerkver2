@@ -82,7 +82,6 @@
     color: $grey-dark;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
-    background-color: #f0f0f0;
     a{ 
       text-decoration: none;
       text-transform: uppercase;
@@ -122,8 +121,6 @@
   }
 
 
-
-
 //---------------------------------------------------------------------------------------------
 //  Layout
 //---------------------------------------------------------------------------------------------
@@ -131,6 +128,7 @@
   *, *:before, *:after { box-sizing: border-box; }
   img{ vertical-align: middle; }
 
+  html { background: $grey-light; }
 
   .header{
     line-height: 4em;
@@ -142,9 +140,9 @@
   }
 
   .container[role="main"]{
-    width: $cols5;
     margin: 0 auto;
     min-height: 95vh;
+    width: $cols5; // default to Galaxy S5 Portrait
   }
 
   .footer{
@@ -157,8 +155,6 @@
       margin: 0 $gutter 0 0;
     }
   }
-
-
 
 
 //---------------------------------------------------------------------------------------------
@@ -199,11 +195,30 @@
     @keyframes drip3{ 100%{ opacity: 0; transform: translate(-30px, 200px); }}
 
 
-
-
 //---------------------------------------------------------------------------------------------
 //  Media Queries
 //---------------------------------------------------------------------------------------------
+  
+  // Defaults on everything is set for $cols5 for Galaxy S5 Portrait
+
+  @media (min-width: $cols6) { // iPhone 6+ Portrait
+    .container[role="main"]{ width: $cols6; }
+  }
+
+  @media (min-width: $cols9) { // Galaxy S5 Landscape
+    .container[role="main"]{ width: $cols9; }
+
+  }
+
+  @media (min-width: $cols10) { // iPhone 6+ Landscape
+    .container[role="main"]{ width: $cols10; }
+  }
+
+  @media (min-width: $cols11) { // Larger than phones
+    html { background: $blue; }
+    .container[role="main"]{ width: $cols11; }
+    
+  }
 
 
 
@@ -213,9 +228,18 @@
 
 
 
-
-
-
+  // Cycle through sizes
+  @for $i from 5 through 27 {
+    @media screen and (min-width: ($i * ($column + $gutter) - $gutter) / $em) { 
+      .container[role="main"]:before{
+        content: 'cols' + $i;
+        position: fixed;
+        top: 0; left: 0;
+        padding: .25em .5em;
+        color: $pink;
+      }
+    }
+  }
 
 
 
