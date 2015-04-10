@@ -91,13 +91,6 @@
 
 
   .nav-link{
-    display: inline;
-    &:after{
-      content: " /";
-      color: $grey-med;
-    }
-    &:last-child:after { content: none; }
-
     > a{
       transition: color .33s cubic-bezier(1.000, -0.195, 0.000, 1.215);
       .vowel{
@@ -131,7 +124,6 @@
   html { background: $grey-light; }
 
   .header{
-    line-height: 4em;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -142,7 +134,7 @@
   .container[role="main"]{
     margin: 0 auto;
     min-height: 95vh;
-    width: $cols5; // default to Galaxy S5 Portrait
+    width: $cols3; // default to Galaxy S5 Portrait
   }
 
   .footer{
@@ -182,17 +174,17 @@
 
   // Index page animation
 
-    .svg-container{
-      * { fill: #fff; }
-    }
-    .svg-poly{  }
-    .svg-circ1{ animation: drip1 3.3s infinite cubic-bezier(1.000, -0.070, 0.680, 0.530); }
-    .svg-circ2{ animation: drip2 2.1s infinite cubic-bezier(1.000, -0.070, 0.680, 0.530); }
-    .svg-circ3{ animation: drip3 2.9s infinite cubic-bezier(1.000, -0.070, 0.680, 0.530); }
+    // .svg-container{
+    //   * { fill: #fff; }
+    // }
+    // .svg-poly{  }
+    // .svg-circ1{ animation: drip1 3.3s infinite cubic-bezier(1.000, -0.070, 0.680, 0.530); }
+    // .svg-circ2{ animation: drip2 2.1s infinite cubic-bezier(1.000, -0.070, 0.680, 0.530); }
+    // .svg-circ3{ animation: drip3 2.9s infinite cubic-bezier(1.000, -0.070, 0.680, 0.530); }
 
-    @keyframes drip1{ 100%{ opacity: 0; transform: translateY(200px); }}
-    @keyframes drip2{ 100%{ opacity: 0; transform: translate( 30px, 200px); }}
-    @keyframes drip3{ 100%{ opacity: 0; transform: translate(-30px, 200px); }}
+    // @keyframes drip1{ 100%{ opacity: 0; transform: translateY(200px); }}
+    // @keyframes drip2{ 100%{ opacity: 0; transform: translate( 30px, 200px); }}
+    // @keyframes drip3{ 100%{ opacity: 0; transform: translate(-30px, 200px); }}
 
 
 //---------------------------------------------------------------------------------------------
@@ -201,12 +193,25 @@
   
   // Defaults on everything is set for $cols5 for Galaxy S5 Portrait
 
+  @media (min-width: $cols5) { // Galaxy S5 Portrait
+    .container[role="main"]{ width: $cols5; }
+    .header{ line-height: 4em; }
+    .nav-link{ display: inline;
+      &:after{
+        content: " /";
+        color: $grey-med;
+      }
+      &:last-child:after { content: none; }
+    }
+  }
+
   @media (min-width: $cols6) { // iPhone 6+ Portrait
     .container[role="main"]{ width: $cols6; }
   }
 
   @media (min-width: $cols9) { // Galaxy S5 Landscape
     .container[role="main"]{ width: $cols9; }
+    .header{ flex-direction: row; margin-bottom: 1em; }
 
   }
 
@@ -217,7 +222,6 @@
   @media (min-width: $cols11) { // Larger than phones
     html { background: $blue; }
     .container[role="main"]{ width: $cols11; }
-    
   }
 
 
@@ -229,7 +233,7 @@
 
 
   // Cycle through sizes
-  @for $i from 5 through 27 {
+  @for $i from 2 through 27 {
     @media screen and (min-width: ($i * ($column + $gutter) - $gutter) / $em) { 
       .container[role="main"]:before{
         content: 'cols' + $i;
