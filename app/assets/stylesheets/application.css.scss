@@ -11,8 +11,12 @@
  * file per style scope.
  *
  */
-@import "reset";
-@import "base";
+@import "base/reset";
+@import "base/frameless";
+@import "base/colors";
+@import "base/typography";
+
+@import "layout";
 
 // Pages
 @import "pages/*";
