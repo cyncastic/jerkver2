@@ -20,7 +20,6 @@
       transition: all .66s cubic-bezier(1.000, -0.195, 0.000, 1.215);
       opacity: 0;
     }
-    &:hover .vowel{ opacity: 1; }
     &.current .vowel{
       opacity: 1;
       display: inline;
@@ -67,7 +66,10 @@
     }
   }
 
-  // @media (min-width: $cols6) { .container[role="main"]{ width: $cols6; } }
+  @media (min-width: $cols6) { 
+    .container[role="main"]{ width: $cols6; } 
+    .nav-link > a:hover .vowel{ opacity: 1; }
+  }
 
   @media (min-width: $cols9) { // Galaxy S5 Landscape
     .container[role="main"]{ width: $cols9; }

@@ -16,8 +16,11 @@ $(document).ready(function($) {
     myVowel.data('width', myVowel.width());
 
     myVowel.parent().hover( 
+
       function(){
-        myVowel.width(myVowel.data('width'));
+        if (matchMedia('only screen and (min-width: 408px)').matches) {
+          myVowel.width(myVowel.data('width'));
+        }
       }, function(){
         myVowel.width(0);
       }
