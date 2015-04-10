@@ -1,11 +1,16 @@
+
 .artwork-holder
-  %img{ src: 'adfasdf' }
+  %img.artwork-showcase{ src: '/assets/work/cheshire.jpg' }
   %ul.artwork-details
-    %li.artwork-title  The Good Doctor
+    %li.artwork-title  Cheshire
     %li.artwork-size   12 X 12
     %li.artwork-medium Acrylic on Canvas
     %li.artwork-year   2014
 
-%ul.conveyor
-  - (1..4).each do |i|
-    %li #{i}
+  %h2 12 x 12
+  %ul.artwork-conveyor
+    %li= image_tag('work/cookie.jpg', size: '60x60')
+    %li= image_tag('work/homey.jpg', size: '60x60')
+    %li= image_tag('work/marvin.jpg', size: '60x60')
+    %li= image_tag('work/mickey.jpg', size: '60x60')
+    %li= image_tag('work/punchout.jpg', size: '60x60')

@@ -132,7 +132,7 @@
   }
 
   .container[role="main"]{
-    margin: 0 auto;
+    margin: 0 auto 2em;
     min-height: 100vh;
     width: $cols3; // default to Galaxy S5 Portrait
   }
@@ -152,6 +152,22 @@
 //---------------------------------------------------------------------------------------------
 //  Pages
 //---------------------------------------------------------------------------------------------
+
+  // Work
+    .artwork-holder{}
+    .artwork-showcase{
+      width: 100%;
+    }
+    .artwork-details{
+      font-size: .5em;
+      text-align: right;
+      li{ display: inline;}
+    }
+    .artwork-conveyor{
+      display: flex;
+      justify-content: space-around;
+    }
+
 
   // Contact
     .contact-email{
