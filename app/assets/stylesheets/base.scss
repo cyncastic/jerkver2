@@ -155,8 +155,8 @@
 
   // Work
     .artwork-holder{}
-    .artwork-showcase{
-      width: 100%;
+    .artwork-showcase > img{
+      max-width: 100%;
     }
     .artwork-details{
       font-size: .75em;
