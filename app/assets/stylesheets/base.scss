@@ -191,7 +191,15 @@
 //  Media Queries
 //---------------------------------------------------------------------------------------------
   
-  // Defaults on everything is set for $cols5 for Galaxy S5 Portrait
+  @media (max-width: 335px ) {
+    body{ background: white; }
+    .header{
+      > h1{ line-height: 1.5em; }
+      margin-bottom: 1em;
+    } 
+    .nav-link{ text-align: center; }
+  }
+
 
   @media (min-width: $cols5) { // Galaxy S5 Portrait
     .container[role="main"]{ width: $cols5; }
@@ -206,16 +214,17 @@
   }
 
   @media (min-width: $cols6) { // iPhone 6+ Portrait
+
     .container[role="main"]{ width: $cols6; }
   }
 
   @media (min-width: $cols9) { // Galaxy S5 Landscape
     .container[role="main"]{ width: $cols9; }
     .header{ flex-direction: row; margin-bottom: 1em; }
-
   }
 
   @media (min-width: $cols10) { // iPhone 6+ Landscape
+
     .container[role="main"]{ width: $cols10; }
   }
 
