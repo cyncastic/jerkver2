@@ -133,18 +133,18 @@
 
   .container[role="main"]{
     margin: 0 auto;
-    min-height: 95vh;
+    min-height: 100vh;
     width: $cols3; // default to Galaxy S5 Portrait
   }
 
   .footer{
     color: #999;
-    line-height: 5vh;
+    line-height: 1.5em;
     background: #e0e0e0;
     > p{
       font-size: .75em;
       text-align: right;
-      margin: 0 $gutter 0 0;
+      margin-right: .5em;
     }
   }
 
@@ -192,7 +192,7 @@
 //---------------------------------------------------------------------------------------------
   
   @media (max-width: 335px ) {
-    body{ background: white; }
+    body{ background: $pink; }
     .header{
       > h1{ line-height: 1.5em; }
       margin-bottom: 1em;
@@ -213,23 +213,16 @@
     }
   }
 
-  @media (min-width: $cols6) { // iPhone 6+ Portrait
-
-    .container[role="main"]{ width: $cols6; }
-  }
+  // @media (min-width: $cols6) { .container[role="main"]{ width: $cols6; } }
 
   @media (min-width: $cols9) { // Galaxy S5 Landscape
     .container[role="main"]{ width: $cols9; }
     .header{ flex-direction: row; margin-bottom: 1em; }
   }
 
-  @media (min-width: $cols10) { // iPhone 6+ Landscape
-
-    .container[role="main"]{ width: $cols10; }
-  }
+  // @media (min-width: $cols10) { .container[role="main"]{ width: $cols10; } }
 
   @media (min-width: $cols11) { // Larger than phones
-    html { background: $blue; }
     .container[role="main"]{ width: $cols11; }
   }
 
@@ -247,8 +240,8 @@
       .container[role="main"]:before{
         content: 'cols' + $i;
         position: fixed;
-        top: 0; left: 0;
-        padding: .25em .5em;
+        top: 0; right: 0;
+        padding: 0 .5em;
         color: $pink;
       }
     }
