@@ -159,10 +159,11 @@
       width: 100%;
     }
     .artwork-details{
-      font-size: .5em;
+      font-size: .75em;
       text-align: right;
       li{ display: inline;}
     }
+    .artwork-category{ text-align: center; }
     .artwork-conveyor{
       display: flex;
       justify-content: space-around;
