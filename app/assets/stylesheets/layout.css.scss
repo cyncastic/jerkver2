@@ -14,10 +14,10 @@
   }
 
   .nav-link > a{
-    transition: all .33s cubic-bezier(1.000, -0.195, 0.000, 1.215);
+    transition: all .25s cubic-bezier(1.000, -0.195, 0.000, 1.215);
     .vowel{
       display: inline-block;
-      transition: all .66s cubic-bezier(1.000, -0.195, 0.000, 1.215);
+      transition: all .5s cubic-bezier(1.000, -0.195, 0.000, 1.215);
       opacity: 0;
     }
     &.current .vowel{
