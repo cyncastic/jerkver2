@@ -76,7 +76,7 @@
     .header{ flex-direction: row; margin-bottom: 1em; }
   }
 
-  // @media (min-width: $cols10) { .container[role="main"]{ width: $cols10; } }
+  @media (min-width: $cols10) { .container[role="main"]{ width: $cols10; } }
 
   @media (min-width: $cols11) { // Larger than phones
     .container[role="main"]{ width: $cols11; }
@@ -91,7 +91,7 @@
       .container[role="main"]:before{
         content: 'cols' + $i;
         position: fixed;
-        top: 0; right: 0;
+        top: 0; left: 0;
         padding: 0 .5em;
         color: $pink;
       }

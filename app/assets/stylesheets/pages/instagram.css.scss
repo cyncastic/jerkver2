@@ -1,13 +1,22 @@
 //---------------------------------------------------------------------------------------------
 //  Instagram
 //---------------------------------------------------------------------------------------------
-    #instafeed{
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      img{
-        width: ($cols5 / 2) - ($gutter/2)/$em;
-        margin-bottom: $gutter; 
-      }
-    }
+
+#instafeed{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  img{
+    width: $cols3;
+    margin-bottom: $gutter; 
+  }
+}
+
+// Media Queries
+
+@media (min-width: $cols5)  { #instafeed img{ width: ($cols5  / 2) - ($gutter/2)/$em; }}
+@media (min-width: $cols6)  { #instafeed img{ width: ($cols6  / 2) - ($gutter/2)/$em; }}
+@media (min-width: $cols9)  { #instafeed img{ width: ($cols9  / 3) - ($gutter/2)/$em; }}
+@media (min-width: $cols10) { #instafeed img{ width: ($cols10 / 4) - ($gutter/2)/$em; }}
+@media (min-width: $cols11) { #instafeed img{ width: ($cols11 / 4) - ($gutter/2)/$em; }}
