@@ -1,17 +1,20 @@
 //---------------------------------------------------------------------------------------------
 //  Artwork
 //---------------------------------------------------------------------------------------------
-    .artwork-holder{}
-    .artwork-showcase > img{
-      max-width: 100%;
+    .artwork-holder, .artwork-conveyor{
+      margin-bottom: 1em;
     }
+
+    .artwork-holder > img{ max-width: 100%; }
+
     .artwork-details{
       font-size: .75em;
       text-align: right;
-      li{ display: inline;}
+      li{ display: inline; }
     }
-    .artwork-category{ text-align: center; }
+
     .artwork-conveyor{
-      display: flex;
-      justify-content: space-around;
+      &:before{
+        content: attr(data-aspectratio);
+      }
     }

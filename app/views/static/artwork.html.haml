@@ -1,19 +1,26 @@
-
 .artwork-holder
-  .artwork-showcase= image_tag( 'work/AdventuresOf_36x36.jpg' )
+  = image_tag( 'work/Homer_3x3.jpg' )
   %ul.artwork-details
-    %li.artwork-title  Cheshire
+    %li.artwork-title  Homer
     %li.artwork-size   12 X 12
     %li.artwork-medium Acrylic on Canvas
     %li.artwork-year   2014
 
-  %h2.artwork-category 12 x 12
-  %ul.artwork-conveyor
-    %li= link_to('work/AngryHero_36x36.jpg')
-    %li= link_to('work/AngryHero_36x36.jpg')
-    %li= link_to('work/AngryHero_36x36.jpg')
-    %li= link_to('work/AngryHero_36x36.jpg')
-    %li= link_to('work/AngryHero_36x36.jpg')
-    %li= link_to('work/AngryHero_36x36.jpg')
-    %li= link_to('work/AngryHero_36x36.jpg')
-    %li= link_to('work/AngryHero_36x36.jpg')
+  %ul.artwork-conveyor{ 'data-aspectratio': '12x12' }
+    %li= link_to('Angry Hero', 'assets/work/AngryHero_36x36.jpg')
+    %li= link_to('Curious Jerk', 'assets/work/CuriousJerk.jpg')
+    %li= link_to('Dee Jerk', 'assets/work/DeeJerk_12x12.jpg')
+    %li= link_to('Funny Things Are Everywhere', 'assets/work/FunnyThingsAreEverywhere2_12x12.jpg')
+    %li= link_to('Iron Jerk', 'assets/work/IronJerk_12x12.jpg')
+    %li= link_to('Krangwad', 'assets/work/Krangwad_12x12.jpg')
+    %li= link_to('Life', 'assets/work/Life_12x12.jpg')
+    %li= link_to('Me Love Cookies', 'assets/work/MeLoveCookies_12x12.jpg')
+
+  %ul.artwork-conveyor{ 'data-aspectratio': '36x36' }
+    %li= link_to('Adventures Of', 'assets/work/AdventuresOf_36x36.jpg')
+    %li= link_to('Greetings Jerklings', 'assets/work/GreetingsJerklings_36x36.jpg')
+    %li= link_to('Quintessential Villain', 'assets/work/QuintessentialVillain_36x36.jpg')
+
+  %ul.artwork-conveyor{ 'data-aspectratio': '20x24' }
+    %li= link_to('My Altered Ego', 'assets/work/MyAlteredEgo_20x24.jpg')
+    %li= link_to('Villains Have More Fun', 'assets/work/VillainsHaveMoreFun_20x24.jpg')
