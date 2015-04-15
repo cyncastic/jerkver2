@@ -12,24 +12,27 @@ $(document).ready(function($) {
     $(this).attr('data-width', $(this).width());
   });
 
-  //then set that width to 0
-  $(".vowel").width(0);
-
-
   $navLinks.hover( 
     function(){
-      $('.vowel', this).each( function(){ 
-        $(this).width($(this).attr('data-width')) 
-      });
+      if ( $(window).width() > 408) {
+        $('.vowel', this).each( function(){ 
+          $(this).width($(this).attr('data-width')) 
+        });
+      }
     }, 
     function(){
-      $('.vowel', this).width(0);
+      if (!$(this).hasClass('current')) {
+        $('.vowel', this).width(0);
+      }
     }
   );
 
   $navLinks.click( function(){
     $navLinks.removeClass('current');
     $(this).addClass('current');
+    $(".vowel", ".nav-link a:not('.current')").width(0);
   });
-  
+
+  $(".vowel", ".nav-link a:not('.current')").width(0);
+
 });

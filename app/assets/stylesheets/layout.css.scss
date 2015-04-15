@@ -22,7 +22,7 @@
     }
     &.current .vowel{
       opacity: 1;
-      display: inline;
+      //display: inline;
     }
   }
 
@@ -53,6 +53,12 @@
     } 
     .nav-link{ text-align: center; }
   }
+
+  @media (max-width: 407px ) {
+    .nav-link > a .vowel{ display: none; }
+    .nav-link > a.current .vowel{ display: inline; }
+  }
+
 
 
   @media (min-width: $cols5) { // Galaxy S5 Portrait
