@@ -1,0 +1,35 @@
+= form_for(@artwork) do |f|
+  - if @artwork.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@artwork.errors.count, "error")
+        prohibited this artwork from being saved:
+      %ul
+        - @artwork.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = f.label :category_id
+      = f.number_field :category_id
+  .field
+    = f.label :title
+      = f.text_field :title
+  .field
+    = f.label :medium 
+      = f.text_field :medium
+  .field
+    = f.label :year 
+      = f.number_field :year
+  .field
+    = f.label :price 
+      = f.number_field :price
+  .field
+    = f.label :sold 
+      = f.check_box :sold
+  .field
+    = f.label :img_url 
+      = f.text_field :img_url
+  .field
+    = f.label :position 
+      = f.number_field :position
+  .actions
+    = f.submit

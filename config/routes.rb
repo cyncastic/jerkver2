@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :artworks
+
   root 'static#home'
 
   get 'artwork' => 'static#artwork'

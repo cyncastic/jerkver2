@@ -1,0 +1,27 @@
+%p
+  %strong Category:
+  = @artwork.category_id
+%p
+  %strong Title:
+  = @artwork.title
+%p
+  %strong Medium:
+  = @artwork.medium
+%p
+  %strong Year:
+  = @artwork.year
+%p
+  %strong Price:
+  = @artwork.price
+%p
+  %strong Sold:
+  = @artwork.sold
+%p
+  %strong Img url:
+  = @artwork.img_url
+%p
+  %strong Position:
+  = @artwork.position
+
+= link_to 'Edit', edit_artwork_path(@artwork)
+= link_to 'Back', artworks_path
