@@ -15,8 +15,10 @@
 
     .artwork-conveyor{
       &:before{
+        display: block;
         content: attr(data-aspectratio);
       }
+      > li { display: inline; }
     }
 
 

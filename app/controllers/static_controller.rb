@@ -3,6 +3,7 @@ class StaticController < ApplicationController
   end
 
   def artwork
+    @categories = Category.all
   end
 
   def instagram

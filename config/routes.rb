@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # resources :artworks
 
-scope "/admin" do
+  scope "/admin" do
     resources :artworks do
       collection do
         post :sort
@@ -11,9 +11,8 @@ scope "/admin" do
 
   root 'static#home'
 
-  get 'artworks' => 'static#artwork'
+  get 'work' => 'static#artwork'
   get 'instagram' => 'static#instagram'
-  get 'photos' => 'static#photos'
   get 'abstract' => 'static#abstract'
   get 'contact' => 'static#contact'
 
