@@ -3,8 +3,9 @@
 //---------------------------------------------------------------------------------------------
 
   $grey-light: #f0f0f0;
-  $grey-med:   #a0a09e;
-  $grey-dark:  #555;
+  $grey-med:   #d3d3d3;
+  $grey-dark:  #a8a8a8;
+  $grey-darker:  #7e7e7e;
 
   $blue:       #1eb1d7; 
   $pink:       #ed1d7a;
@@ -16,8 +17,10 @@
   body{ color: $grey-dark; }
   a{    color: $grey-med;  }
 
+  .header > h1 > a{ color: $grey-med; }
+
   .nav-link{
-    .current{ color: $grey-dark; }
+    .current, .current:hover, .current .vowel{ color: $grey-darker; }
     a:hover { color: $grey-dark; }
     &:after { color: $grey-med;  }
     .vowel  { color: $grey-dark; }

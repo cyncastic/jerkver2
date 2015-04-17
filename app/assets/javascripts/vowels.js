@@ -14,11 +14,9 @@ $(document).ready(function($) {
 
   $navLinks.hover( 
     function(){
-      if ( $(window).width() > 408) {
-        $('.vowel', this).each( function(){ 
-          $(this).width($(this).attr('data-width')) 
-        });
-      }
+      $('.vowel', this).each( function(){ 
+        $(this).width($(this).attr('data-width')) 
+      });
     }, 
     function(){
       if (!$(this).hasClass('current')) {

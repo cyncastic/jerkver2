@@ -8,9 +8,6 @@ class StaticController < ApplicationController
   def instagram
   end
 
-  def photos
-  end
-
   def abstract
   end
 

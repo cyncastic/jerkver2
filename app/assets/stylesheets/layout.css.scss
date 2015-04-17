@@ -10,10 +10,11 @@
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
-    > h1{ font-size: 3em; }
+    > h1{ font-size: 1.5em; }
   }
 
   .nav-link > a{
+    font-size: .75em;
     transition: all .25s cubic-bezier(1.000, -0.195, 0.000, 1.215);
     .vowel{
       display: inline-block;
@@ -22,8 +23,8 @@
     }
     &.current .vowel{
       opacity: 1;
-      //display: inline;
     }
+    &:hover .vowel{ opacity: 1; }
   }
 
   .container[role="main"]{
@@ -70,19 +71,12 @@
       > h1{ line-height: 1.5em; }
       margin-bottom: 1em;
     } 
-    .nav-link{ text-align: center; }
+    .nav-link{ text-align: center; line-height: 1em; }
   }
-
-  @media (max-width: 407px ) {
-    .nav-link > a .vowel{ display: none; }
-    .nav-link > a.current .vowel{ display: inline; }
-  }
-
-
 
   @media (min-width: $cols5) { // Galaxy S5 Portrait
     .container[role="main"]{ width: $cols5; }
-    .header{ line-height: 4em; }
+    .header{ line-height: 2em; }
     .nav-link{ display: inline;
       &:after{
         content: " /";
@@ -93,7 +87,6 @@
 
   @media (min-width: $cols6) { 
     .container[role="main"]{ width: $cols6; } 
-    .nav-link > a:hover .vowel{ opacity: 1; }
   }
 
   @media (min-width: $cols9) { // Galaxy S5 Landscape
