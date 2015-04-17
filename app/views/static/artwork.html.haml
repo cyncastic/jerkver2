@@ -8,9 +8,10 @@
       %li.artwork-medium= artwork.medium
       %li.artwork-year=   artwork.year
 
-  - @categories.each do |category| 
-    %ul.artwork-conveyor{ 'data-aspectratio': category.name }
-      - category.artworks.each do |artwork|
-        %li
-          %a{ href: artwork.image_url(:large).to_s, data: { title: artwork.title, year: artwork.year, medium: artwork.medium }}
-            =image_tag artwork.image_url(:icon).to_s, alt: artwork.title
+  - @categories.each do |category|
+    - if category.artworks.any? 
+      %ul.artwork-conveyor{ 'data-aspectratio': category.name }
+        - category.artworks.each do |artwork|
+          %li
+            %a{ href: artwork.image_url(:large).to_s, data: { title: artwork.title, year: artwork.year, medium: artwork.medium }}
+              =image_tag artwork.image_url(:icon).to_s, alt: artwork.title
