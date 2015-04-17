@@ -1,0 +1,12 @@
+%section.admin
+  %h1 Create Thumbnail
+
+  .crop-holder
+    = image_tag @artwork.image_url(:large), id: "cropbox"
+
+  = form_for @artwork do |f|
+    - %w[x y w h].each do |attribute|
+      = f.hidden_field "crop_#{attribute}"
+
+    .actions
+      = f.submit "Crop", class: 'btn'
