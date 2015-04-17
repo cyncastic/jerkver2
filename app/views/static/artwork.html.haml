@@ -1,6 +1,6 @@
 .artwork-holder
 
-  - @categories.last.artworks.each do |artwork|
+  - @artwork.each do |artwork|
     =image_tag artwork.image_url(:large).to_s, alt: artwork.title
     %ul.artwork-details
       %li.artwork-title=  artwork.title
@@ -8,7 +8,7 @@
       %li.artwork-medium= artwork.medium
       %li.artwork-year=   artwork.year
 
-  - @categories.each do |category|
+  - @categories.each do |category| 
     - if category.artworks.any? 
       %ul.artwork-conveyor{ 'data-aspectratio': category.name }
         - category.artworks.each do |artwork|

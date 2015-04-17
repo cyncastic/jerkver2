@@ -4,6 +4,7 @@ class StaticController < ApplicationController
 
   def artwork
     @categories = Category.all
+    @artwork = *Artwork.order("RANDOM()").first
   end
 
   def instagram
