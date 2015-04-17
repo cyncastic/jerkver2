@@ -1,15 +1,17 @@
 Rails.application.routes.draw do
   # resources :artworks
 
-  resources :artworks do
-    collection do
-      post :sort
+scope "/admin" do
+    resources :artworks do
+      collection do
+        post :sort
+      end
     end
   end
 
   root 'static#home'
 
-  # get 'artwork' => 'static#artwork'
+  get 'artworks' => 'static#artwork'
   get 'instagram' => 'static#instagram'
   get 'photos' => 'static#photos'
   get 'abstract' => 'static#abstract'
