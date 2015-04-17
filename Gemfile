@@ -7,18 +7,19 @@ gem 'rails', '4.2.0'
 gem 'haml',  '4.0.6'
 gem 'sass-rails', '5.0.1'
 
-gem "autoprefixer-rails"
+gem 'autoprefixer-rails'
 
-gem "jquery-rails"
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'rack-pjax'
 
 gem 'uglifier',  '2.7.1'
 
-# gem 'bcrypt-ruby', '3.1.5'
+gem 'bcrypt-ruby', '3.1.5'
 
-# gem 'carrierwave',  '0.10.0'
-# gem 'rmagick',  '2.13.4'
-# gem 'fog',  '1.28.0'
+gem 'carrierwave',  '0.10.0'
+gem 'rmagick',  '2.13.4'
+gem 'fog',  '1.28.0'
 
 group :development, :test do
   gem 'sqlite3',  '1.3.10'

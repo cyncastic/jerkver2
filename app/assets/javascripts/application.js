@@ -11,8 +11,9 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
-//=require jquery.pjax
+//= require jquery.pjax
 
 
 //= require_tree .

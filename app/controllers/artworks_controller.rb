@@ -3,11 +3,7 @@ class ArtworksController < ApplicationController
 
   # GET /artworks
   def index
-    @artworks = Artwork.all
-  end
-
-  # GET /artworks/1
-  def show
+    @artworks = Artwork.all.order("position")
   end
 
   # GET /artworks/new
@@ -19,12 +15,15 @@ class ArtworksController < ApplicationController
   def edit
   end
 
-  # POST /artworks
+# POST /artworks
   def create
     @artwork = Artwork.new(artwork_params)
-
     if @artwork.save
-      redirect_to @artwork, notice: 'Artwork was successfully created.'
+      if params[:artwork][:image]
+        render :crop
+      else
+        redirect_to artworks_path, notice: 'Artwork successfully created.'
+      end
     else
       render :new
     end
@@ -33,7 +32,7 @@ class ArtworksController < ApplicationController
   # PATCH/PUT /artworks/1
   def update
     if @artwork.update(artwork_params)
-      redirect_to @artwork, notice: 'Artwork was successfully updated.'
+      redirect_to artworks_path, notice: 'Artwork was successfully updated.'
     else
       render :edit
     end
@@ -42,7 +41,14 @@ class ArtworksController < ApplicationController
   # DELETE /artworks/1
   def destroy
     @artwork.destroy
-    redirect_to artworks_url, notice: 'Artwork was successfully destroyed.'
+    redirect_to artworks_path, notice: 'Artwork was successfully destroyed.'
+  end
+
+  def sort
+    params[:artwork].each_with_index do |id, index|
+      Artwork.where(id: id).update_all(position: index+1)
+    end
+    render nothing: true
   end
 
   private
@@ -53,6 +59,6 @@ class ArtworksController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def artwork_params
-      params.require(:artwork).permit(:category_id, :title, :medium, :year, :price, :sold, :img_url, :position)
+      params.require(:artwork).permit(:category_id, :title, :medium, :year, :price, :sold, :image, :position, :crop_x, :crop_y, :crop_w, :crop_h)
     end
 end

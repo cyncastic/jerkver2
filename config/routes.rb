@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  resources :artworks
+  # resources :artworks
+
+  resources :artworks do
+    collection do
+      post :sort
+    end
+  end
 
   root 'static#home'
 

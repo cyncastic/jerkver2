@@ -7,15 +7,10 @@
       %ul
         - @artwork.errors.full_messages.each do |msg|
           %li= msg
+          
   .fie
     = f.label :category_id
     = f.collection_select(:category_id, Category.all, :id, :name, { selected: params[:category_id] })
-  .field
-    = f.label :price
-    = f.number_field :price
-  .field
-    = f.label :sold
-    = f.check_box :sold
   .field
     = f.label :title
     = f.text_field :title
@@ -26,7 +21,7 @@
     = f.label :year
     = f.select :year, (2000..Time.now.year).to_a.reverse, { prompt: false }
   .field
-    = f.label :img_url
-    = f.file_field :img_url
+    = f.label :image
+    = f.file_field :image
   .actions
     = f.submit

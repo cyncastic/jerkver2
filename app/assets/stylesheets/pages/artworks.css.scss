@@ -18,3 +18,12 @@
         content: attr(data-aspectratio);
       }
     }
+
+
+    table{
+      width: 100%;
+      text-align: left;
+      border: 1px $grey-med solid;
+      background: white;
+      td, th{ padding: .25em; }
+    }

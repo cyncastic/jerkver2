@@ -42,6 +42,24 @@
   }
 
 
+#crop-holder{
+  display: block;
+}
+#crop-preview{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width:180px; 
+  height:180px;
+  overflow:hidden;
+  border: 3px solid rgba(0,0,0,.5);
+}
+
+.crop-holder{ 
+  width: 950px;
+  margin: 0 auto;
+}
+
 //---------------------------------------------------------------------------------------------
 //  Media Queries
 //---------------------------------------------------------------------------------------------
@@ -86,6 +104,10 @@
 
   @media (min-width: $cols11) { // Larger than phones
     .container[role="main"]{ width: $cols11; }
+  }
+
+  @media (min-width: $cols17) { // MBP 13" Fullscreen
+    .container[role="main"]{ width: $cols17; }
   }
 
 
