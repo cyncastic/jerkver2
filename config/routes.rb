@@ -1,13 +1,4 @@
 Rails.application.routes.draw do
-  # resources :artworks
-
-  scope "/admin" do
-    resources :artworks do
-      collection do
-        post :sort
-      end
-    end
-  end
 
   root 'static#home'
 
@@ -15,5 +6,17 @@ Rails.application.routes.draw do
   get 'instagram' => 'static#instagram'
   get 'abstract' => 'static#abstract'
   get 'contact' => 'static#contact'
+
+  scope "/admin" do
+
+    get '/' => 'static#admin'
+
+    resources :artworks do
+      collection do
+        post :sort
+      end
+    end
+    
+  end
 
 end

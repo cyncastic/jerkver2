@@ -1,0 +1,20 @@
+%section.admin.admin-panel
+
+  %h1 Admin Panel
+  
+  %h2 Add Content
+  %ul
+    / %li= link_to 'Blog Entry', new_blog_path 
+    %li= link_to 'Artwork', new_artwork_path 
+
+  %h2 Manage Content
+  %ul
+    / %li= link_to 'Blog', blogs_path 
+    %li= link_to 'Artwork', artworks_path 
+
+  %h2 Settings
+  %ul
+    / %li= link_to 'Users', users_path 
+    / %li= link_to 'Categories', categories_path 
+
+
