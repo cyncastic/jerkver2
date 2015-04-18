@@ -21,6 +21,8 @@ gem 'carrierwave',  '0.10.0'
 gem 'rmagick',  '2.13.4'
 gem 'fog',  '1.28.0'
 
+gem 'puma'
+
 group :development, :test do
   gem 'sqlite3',  '1.3.10'
 end
