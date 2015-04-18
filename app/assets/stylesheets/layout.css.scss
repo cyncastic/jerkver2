@@ -33,6 +33,8 @@
     width: $cols3;
   }
 
+
+
   .footer{
     line-height: 1.5em;
     > p{
@@ -92,13 +94,11 @@
   @media (min-width: $cols9) { // Galaxy S5 Landscape
     .container[role="main"]{ width: $cols9; }
     .header{ flex-direction: row; margin-bottom: 1em; }
+    nav.nav{ margin-right: $gutter; }
+    .content{ margin: 0 $gutter; }
   }
 
   @media (min-width: $cols10) { .container[role="main"]{ width: $cols10; } }
-
-  @media (min-width: $cols11) { // Larger than phones
-    .container[role="main"]{ width: $cols11; }
-  }
 
   @media (min-width: $cols17) { // MBP 13" Fullscreen
     .container[role="main"]{ width: $cols17; }

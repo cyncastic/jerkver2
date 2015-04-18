@@ -21,9 +21,9 @@
 
   .nav-link{
     .current, .current:hover, .current .vowel{ color: $grey-darker; }
-    a:hover { color: $grey-dark; }
-    &:after { color: $grey-med;  }
-    .vowel  { color: $grey-dark; }
+    a:hover, .vowel {                          color: $grey-dark; }
+    &:after{                                   color: $grey-med;  }
+    .admin{                                    color: $pink; }
   }
 
   .footer{
