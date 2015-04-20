@@ -1,0 +1,55 @@
+//---------------------------------------------------------------------------------------------
+//  Artwork
+//---------------------------------------------------------------------------------------------
+    .artwork-container{ }
+
+    .artwork-holder{
+      max-width: 70vh;
+      margin: 0 auto 1em;
+      > img{ 
+        max-width: 100%;
+        max-height: 70vh;
+        margin: 0 auto;
+      }
+    }
+
+    .artwork-details, .artwork-conveyor ul{ > li{ display: inline; }}
+
+    .artwork-details{
+      text-align: right;
+      li:after{ content: " /"; }
+      li:last-child:after { content: none; }
+    }
+
+    .artwork-conveyor{
+      overflow-x:scroll;  
+      white-space: nowrap;
+      margin-bottom: 1em;
+      &:before{
+        display: block;
+        content: attr(data-aspectratio);
+      }
+    }
+
+    .artwork-link{ 
+      display: inline-block;
+      width: 15vh;
+      height: 15vh;
+      margin: 0 .5em;
+      &:first-child{ margin: 0 .5em 0 0; }
+      &:last-child{  margin: 0 0 0 .5em; }
+    }
+    .artwork-link > img{ 
+      max-width: 100%;
+      border: 4px $grey-med solid;
+    }
+
+
+
+
+
+
+
+
+
+
