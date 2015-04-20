@@ -22,9 +22,11 @@
     }
 
     .artwork-conveyor{
-      overflow-x:scroll;  
-      white-space: nowrap;
-      margin-bottom: 1em;
+      ul{
+        overflow-x:scroll;  
+        white-space: nowrap;
+        margin-bottom: 1em;
+      }
       &:before{
         display: block;
         content: attr(data-aspectratio);
@@ -33,15 +35,12 @@
 
     .artwork-link{ 
       display: inline-block;
-      width: 15vh;
-      height: 15vh;
+      width:  $cols2;
+      height: $cols2;
       margin: 0 .5em;
-      &:first-child{ margin: 0 .5em 0 0; }
-      &:last-child{  margin: 0 0 0 .5em; }
     }
     .artwork-link > img{ 
       max-width: 100%;
-      border: 4px $grey-med solid;
     }
 
 
