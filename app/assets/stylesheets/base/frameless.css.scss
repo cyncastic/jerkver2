@@ -47,16 +47,16 @@
   $grid-dark:  LightYellow;
 
 
-  .content{
-    min-height: 100%;
-    background-image: linear-gradient(to right, $grid-light, $grid-light $gutter, $grid-dark $gutter, $grid-dark $column, $grid-light $column);
-    background-size: ($column + $gutter) $column;
-    background-position: center;
-  }
+  // .content{
+  //   min-height: 100%;
+  //   background-image: linear-gradient(to right, $grid-light, $grid-light $gutter, $grid-dark $gutter, $grid-dark $column, $grid-light $column);
+  //   background-size: ($column + $gutter) $column;
+  //   background-position: center;
+  // }
     
-  @media (min-width: $cols6)  { .content{ background-position: center; }}
-  @media (min-width: $cols9)  { .content{ background-position: $gutter; }}
-  @media (min-width: $cols10) { .content{ background-position: $gutter; }}
-  @media (min-width: $cols18) { .content{ background-position: 100px; }}
-  @media (min-width: $cols27) { .content{ background-position: $gutter; }}
+  // @media (min-width: $cols6)  { .content{ background-position: center; }}
+  // @media (min-width: $cols9)  { .content{ background-position: $gutter; }}
+  // @media (min-width: $cols10) { .content{ background-position: $gutter; }}
+  // @media (min-width: $cols18) { .content{ background-position: 100px; }}
+  // @media (min-width: $cols27) { .content{ background-position: $gutter; }}
 

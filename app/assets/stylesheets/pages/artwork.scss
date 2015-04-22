@@ -22,27 +22,25 @@
     }
 
     .artwork-conveyor{
+      &:before{
+        display: block;
+        content: attr(data-aspectratio);
+      }
       ul{
         overflow-x:scroll;
         -webkit-overflow-scrolling: touch;
         white-space: nowrap;
         margin-bottom: $gutter;
       }
-      &:before{
-        display: block;
-        content: attr(data-aspectratio);
-      }
     }
 
     .artwork-link{
-      display: inline;
-      > a{ margin-right: $gutter - 4px; }
-      &:last-child a{ margin-right: 0; }
+      display: inline-block;
+      margin-right: $gutter;
+      &:last-child{ margin-right: 0; }
     }
 
     .artwork-link > a > img{ width: $cols3; }
-
-
     @media (min-width: $cols5)  { .artwork-link > a > img{ width: ($cols5  / 2) - ($gutter * .5    )/$em; }}
     @media (min-width: $cols6)  { .artwork-link > a > img{ width: ($cols6  / 2) - ($gutter * .5    )/$em; }}
     @media (min-width: $cols9)  { .artwork-link > a > img{ width: ($cols9  / 3) - ($gutter * .667  )/$em; }}
