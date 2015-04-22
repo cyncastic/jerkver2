@@ -15,8 +15,11 @@
 
 // Media Queries
 
-@media (min-width: $cols5)  { #instafeed img{ width: ($cols5  / 2) - ($gutter * .5  )/$em; }}
-@media (min-width: $cols6)  { #instafeed img{ width: ($cols6  / 2) - ($gutter * .5  )/$em; }}
-@media (min-width: $cols9)  { #instafeed img{ width: ($cols9  / 3) - ($gutter * .667)/$em; }}
-@media (min-width: $cols10) { #instafeed img{ width: ($cols10 / 4) - ($gutter * .75 )/$em; }}
-@media (min-width: $cols11) { #instafeed img{ width: ($cols11 / 4) - ($gutter * .75 )/$em; }}
+@media (min-width: $cols5)  { #instafeed img{ width: ($cols5  / 2) - ($gutter * .5    )/$em; }}
+@media (min-width: $cols6)  { #instafeed img{ width: ($cols6  / 2) - ($gutter * .5    )/$em; }}
+@media (min-width: $cols9)  { #instafeed img{ width: ($cols9  / 3) - ($gutter * .667  )/$em; }}
+@media (min-width: $cols10) { #instafeed img{ width: ($cols10 / 4) - ($gutter * .75   )/$em; }}
+
+@media (min-width: $cols18) { #instafeed img{ width: ($cols18 / 6) - ($gutter * 1.334 )/$em; }}
+
+@media (min-width: $cols27) { #instafeed img{ width: ($cols27 / 9) - ($gutter * 2.667 )/$em; }}

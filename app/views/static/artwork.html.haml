@@ -13,6 +13,6 @@
       .artwork-conveyor{ 'data-aspectratio': category.name }
         %ul
           - category.artworks.each do |artwork|
-            %li
-              %a.artwork-link{ href: artwork.image_url(:large).to_s, data: { title: artwork.title, year: artwork.year, medium: artwork.medium }}
+            %li.artwork-link
+              %a{ href: artwork.image_url(:large).to_s, data: { title: artwork.title, year: artwork.year, medium: artwork.medium }}
                 =image_tag artwork.image_url(:thumb).to_s, alt: artwork.title

@@ -23,9 +23,10 @@
 
     .artwork-conveyor{
       ul{
-        overflow-x:scroll;  
+        overflow-x:scroll;
+        -webkit-overflow-scrolling: touch;
         white-space: nowrap;
-        margin-bottom: 1em;
+        margin-bottom: $gutter;
       }
       &:before{
         display: block;
@@ -33,22 +34,21 @@
       }
     }
 
-    .artwork-link{ 
-      display: inline-block;
-      width:  $cols2;
-      height: $cols2;
-      margin: 0 .5em;
-    }
-    .artwork-link > img{ 
-      max-width: 100%;
+    .artwork-link{
+      display: inline;
+      > a{ margin-right: $gutter - 4px; }
+      &:last-child a{ margin-right: 0; }
     }
 
+    .artwork-link > a > img{ width: $cols3; }
 
 
-
-
-
-
+    @media (min-width: $cols5)  { .artwork-link > a > img{ width: ($cols5  / 2) - ($gutter * .5    )/$em; }}
+    @media (min-width: $cols6)  { .artwork-link > a > img{ width: ($cols6  / 2) - ($gutter * .5    )/$em; }}
+    @media (min-width: $cols9)  { .artwork-link > a > img{ width: ($cols9  / 3) - ($gutter * .667  )/$em; }}
+    @media (min-width: $cols10) { .artwork-link > a > img{ width: ($cols10 / 4) - ($gutter * .75   )/$em; }}
+    @media (min-width: $cols18) { .artwork-link > a > img{ width: ($cols18 / 6) - ($gutter * 1.334 )/$em; }}
+    @media (min-width: $cols27) { .artwork-link > a > img{ width: ($cols27 / 9) - ($gutter * 2.667 )/$em; }}
 
 
 
