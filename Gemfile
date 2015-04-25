@@ -13,6 +13,8 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'rack-pjax'
 
+gem 'modernizr-rails'
+
 gem 'uglifier',  '2.7.1'
 
 gem 'bcrypt-ruby', '3.1.5'
