@@ -34,7 +34,7 @@
 
       .prev, .next{
         position: absolute;
-        top: ($cols3 - .5em) / 2;
+        top: ($cols3 - 1.5em) / 2;
         display: inline-block;
         width: $cols1/2 ; height: $cols1/2;
         border-top:  6px white solid;
