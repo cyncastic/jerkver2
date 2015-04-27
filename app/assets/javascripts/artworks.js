@@ -1,4 +1,4 @@
-$(document).ready(function($) {
+$(document).on('pjax:success', function() {
 
   var $mainImg = $('.artwork-holder > img');
 
@@ -7,7 +7,5 @@ $(document).ready(function($) {
     $mainImg.attr('src', this.href);
     console.log(this.href);
   });
-
-
 
 });
