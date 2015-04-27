@@ -93,15 +93,15 @@
   }
 
   @media (min-width: $cols9) { // Galaxy S5 Landscape
-    .container[role="main"]{ width: $cols9; }
+    .container[role="main"]{ width: $cols8; }
     .header{ flex-direction: row; margin-bottom: 1em; }
     .header > h1{ transform: translateX(-$gutter) }
   }
 
-  @media (min-width: $cols10) { .container[role="main"]{ width: $cols10; } }
+  @media (min-width: $cols10) { .container[role="main"]{ width: $cols9; } }
 
   @media (min-width: $cols17) { // MBP 13" Fullscreen
-    .container[role="main"]{ width: $cols17; }
+    .container[role="main"]{ width: $cols16; }
   }
 
 

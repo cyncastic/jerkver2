@@ -10,7 +10,11 @@
 
   - @categories.each do |category| 
     - if category.artworks.any?
-      .artwork-conveyor{ 'data-aspectratio': category.name }
+      .artwork-conveyor{ class: category.name }
+        %h2= category.name
+        - if category.artworks.count > 4
+          .prev
+          .next
         %ul
           - category.artworks.each do |artwork|
             %li.artwork-link>
