@@ -1,11 +1,20 @@
-$(document).on('pjax:success', function() {
 
-  var $mainImg = $('.artwork-holder > img');
+$('.artwork-conveyor').each(function(){
 
-  $('.artwork-conveyor a').click( function(){
-    event.preventDefault();
-    $mainImg.attr('src', this.href);
-    console.log(this.href);
+
+  var $carousel = $('ul', this);
+  var increment = $carousel.width() + 24;
+
+  $('.prev', this).click(function(){
+    $carousel.css( "marginLeft", "+=" + increment  );
   });
 
-});
+  $('.next', this).click(function(){
+    $carousel.css( "marginLeft", "-=" + increment + "px" );
+  });
+
+  console.log(increment);
+
+})
+
+// this is all nonsense right now...

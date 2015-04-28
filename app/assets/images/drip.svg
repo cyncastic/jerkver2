@@ -1,42 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300">
-  
-  <defs>
-    <filter id="fancy-goo">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
-      <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
-    </filter>
-  </defs>
-  
-  <g class="svg-container">
-    <circle class="svg-circ1"
-      fill="#58585a"
-      cx="100"
-      cy="160"
-      r="20" />
-    <circle class="svg-circ2"
-      fill="#58585a" 
-      cx="50"
-      cy="165"
-      r="15" />
-    <circle class="svg-circ3"
-      fill="#58585a" 
-      cx="150"
-      cy="165"
-      r="15" />
-    <circle class="svg-circ4"
-      fill="#58585a" 
-      cx="180"
-      cy="125"
-      r="15" />
-    <circle class="svg-circ5"
-      fill="#58585a" 
-      cx="20"
-      cy="125"
-      r="15" />
+
     <polygon class="svg-poly"
       stroke="4"
-      fill="#58585a" 
+      fill="#d3d3d3" 
       points="100 0 0 124 39 180 162 180 200 124 "/>
-  </g>
+
 </svg>

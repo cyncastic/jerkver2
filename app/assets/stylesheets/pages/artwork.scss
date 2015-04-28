@@ -1,7 +1,6 @@
 //---------------------------------------------------------------------------------------------
 //  Artwork
 //---------------------------------------------------------------------------------------------
-    .artwork-container{ }
 
     .artwork-holder{
       max-width: 70vh;
@@ -13,55 +12,66 @@
       }
     }
 
-    .artwork-details, .artwork-conveyor ul{ > li{ display: inline; }}
-
     .artwork-details{
       text-align: right;
-      li:after{ content: " /"; }
-      li:last-child:after { content: none; }
+      > li{ 
+        display: inline;
+        &:after{ content: " /"; }
+        &:last-child:after { content: none; }
+      }
+    }
+
+    .touch .artwork-conveyor > ul{
+      -webkit-overflow-scrolling: touch;
+      white-space: nowrap;
+    }
+
+    .no-touch .artwork-conveyor > ul{
+      overflow: hidden;
+      display: flex;
+      flex-wrap: nowrap;
+      transition: all 1s;
     }
 
     .artwork-conveyor{
       position: relative;
-      ul{
-        overflow: hidden;
-        -webkit-overflow-scrolling: touch;
-        margin-bottom: $gutter;
-        white-space: nowrap;
-      }
+      overflow: hidden;
+      width: auto;
+      margin-bottom: $gutter;
 
-      &:hover{ .prev, .next{ opacity: 1; }}
+      &:hover{
+        .prev{ transform: translateX(0); }
+        .next{ transform: translateX(0); }
+      }
+      .prev{ left:  0;   transform: translateX(-1.5em); }
+      .next{ right: 0;   transform: translateX( 1.5em); }
 
       .prev, .next{
         position: absolute;
-        top: ($cols3 - 1.5em) / 2;
-        display: inline-block;
-        width: $cols1/2 ; height: $cols1/2;
-        border-top:  6px white solid;
-        border-left: 6px white solid;
-        opacity: 0;
-        transition: opacity .5s cubic-bezier(1.000, 0.000, 0.000, 1.000);
+        padding: 0 .5em;
+        background: rgba(245,245,245,.95);
+        color: $blue;
+        line-height: $cols1 * 2;
+        font-size: 2em;
+        transition: transform .25s;
+        cursor: pointer;
       }
-      .prev{ left:  - $cols1/2; transform: rotate(-45deg); }
-      .next{ right: - $cols1/2; transform: rotate(135deg);}
     }
 
     .artwork-link{
-      position: relative;
-      transform: translateY( - ($cols3 + $gutter/$em) );
-      display: inline-block;
       margin-right: $gutter;
-      &:last-child{ margin-right: 0; }
+      flex-shrink: 0;
+      //&:last-child{ margin-right: 0; }
     }
 
     .artwork-link > a > img{ width: $cols3; }
 
-    @media (min-width: $cols5)  { .artwork-link > a > img{ width: ($cols5  / 2) - ($gutter * .5    )/$em; }}
-    @media (min-width: $cols6)  { .artwork-link > a > img{ width: ($cols6  / 2) - ($gutter * .5    )/$em; }}
-    @media (min-width: $cols9)  { .artwork-link > a > img{ width: ($cols8  / 3) - ($gutter * .667  )/$em; }}
-    @media (min-width: $cols10) { .artwork-link > a > img{ width: ($cols9 / 4) - ($gutter * .75   )/$em; }}
-    @media (min-width: $cols18) { .artwork-link > a > img{ width: ($cols17 / 6) - ($gutter * 1.334 )/$em; }}
-    @media (min-width: $cols27) { .artwork-link > a > img{ width: ($cols26 / 9) - ($gutter * 2.667 )/$em; }}
+    // @media (min-width: $cols5)  { .artwork-link > a > img{ width: ($cols5  / 2) - ($gutter * .5    )/$em; }}
+    // @media (min-width: $cols6)  { .artwork-link > a > img{ width: ($cols6  / 2) - ($gutter * .5    )/$em; }}
+    // @media (min-width: $cols9)  { .artwork-link > a > img{ width: ($cols8  / 3) - ($gutter * .667  )/$em; }}
+    // @media (min-width: $cols10) { .artwork-link > a > img{ width: ($cols9 / 4) - ($gutter * .75   )/$em; }}
+    // @media (min-width: $cols18) { .artwork-link > a > img{ width: ($cols17 / 6) - ($gutter * 1.334 )/$em; }}
+    // @media (min-width: $cols27) { .artwork-link > a > img{ width: ($cols26 / 9) - ($gutter * 2.667 )/$em; }}
 
 
 

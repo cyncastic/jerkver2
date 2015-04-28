@@ -1,22 +1,21 @@
-.artwork-container
-  - @artwork.each do |artwork|
-    .artwork-holder
-      =image_tag artwork.image_url(:large).to_s, alt: artwork.title
-      %ul.artwork-details
-        %li.artwork-title=  artwork.title
-        %li.artwork-size=   Category.find(artwork.category_id).name
-        %li.artwork-medium= artwork.medium
-        %li.artwork-year=   artwork.year
+- @artwork.each do |artwork|
+  .artwork-holder
+    =image_tag artwork.image_url(:large).to_s, alt: artwork.title
+    %ul.artwork-details
+      %li.artwork-title=  artwork.title
+      %li.artwork-size=   Category.find(artwork.category_id).name
+      %li.artwork-medium= artwork.medium
+      %li.artwork-year=   artwork.year
 
-  - @categories.each do |category| 
-    - if category.artworks.any?
-      .artwork-conveyor{ class: category.name }
-        %h2= category.name
-        - if category.artworks.count > 4
-          .prev
-          .next
-        %ul
-          - category.artworks.each do |artwork|
-            %li.artwork-link>
-              %a{ href: artwork.image_url(:large).to_s, data: { title: artwork.title, year: artwork.year, medium: artwork.medium }}>
-                %img{ src: artwork.image_url(:thumb).to_s, alt: artwork.title}>
+- @categories.each do |category| 
+  - if category.artworks.any?
+    .artwork-conveyor{ class: category.name }
+      %h2= category.name
+      - if category.artworks.count > 2
+        %a.navigation.prev &laquo;
+        %a.navigation.next &raquo;
+      %ul
+        - category.artworks.each do |artwork|
+          %li.artwork-link
+            %a{ href: artwork.image_url(:large).to_s, data: { title: artwork.title, year: artwork.year, medium: artwork.medium }}
+              %img{ src: artwork.image_url(:thumb).to_s, alt: artwork.title}
