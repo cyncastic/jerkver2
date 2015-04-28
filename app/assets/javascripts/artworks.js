@@ -1,20 +1,25 @@
+$('.artwork-conveyor').each(function() {
 
-$('.artwork-conveyor').each(function(){
+  var $prev = $('.prev', this),
+    $next = $('.next', this),
+    $carousel = $('ul', this),
+    totalWidth = $carousel.prop('scrollWidth'),
+    increment = $carousel.width() + 24;
 
-
-  var $carousel = $('ul', this);
-  var increment = $carousel.width() + 24;
-
-  $('.prev', this).click(function(){
-    $carousel.css( "marginLeft", "+=" + increment  );
+  $prev.click(function() {
+    if ( parseInt($carousel.css('marginLeft')) + increment <= 0) {
+      $carousel.css('marginLeft', '+=' + increment);
+    } else {
+      $carousel.css('marginLeft', 0);
+    }
   });
 
-  $('.next', this).click(function(){
-    $carousel.css( "marginLeft", "-=" + increment + "px" );
+  $next.click(function() {
+    if (parseInt($carousel.css('marginLeft')) - increment > -(totalWidth - increment)) {
+      $carousel.css('marginLeft', '-=' + increment);
+    } else {
+      $carousel.css('marginLeft', -(totalWidth - increment + 24));
+    }
   });
-
-  console.log(increment);
 
 })
-
-// this is all nonsense right now...
