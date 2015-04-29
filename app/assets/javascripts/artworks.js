@@ -1,25 +1,40 @@
-$('.artwork-conveyor').each(function() {
+// Call on page load
+$(document).ready(function() {
+  setCarousel();
+});
 
-  var $prev = $('.prev', this),
-    $next = $('.next', this),
-    $carousel = $('ul', this),
-    totalWidth = $carousel.prop('scrollWidth'),
-    increment = $carousel.width() + 24;
+var setCarousel = function(){
 
-  $prev.click(function() {
-    if ( parseInt($carousel.css('marginLeft')) + increment <= 0) {
-      $carousel.css('marginLeft', '+=' + increment);
-    } else {
-      $carousel.css('marginLeft', 0);
-    }
-  });
+  $('.artwork-conveyor').each(function() {
 
-  $next.click(function() {
-    if (parseInt($carousel.css('marginLeft')) - increment > -(totalWidth - increment)) {
-      $carousel.css('marginLeft', '-=' + increment);
-    } else {
-      $carousel.css('marginLeft', -(totalWidth - increment + 24));
-    }
-  });
+    var $prev = $('.prev', this),
+        $next = $('.next', this),
+        $carousel = $('ul', this),
+        totalWidth = $carousel.prop('scrollWidth'),
+        increment =  $carousel.width() + 24;
 
-})
+    $prev.click(function() {
+      if ( parseInt($carousel.css('marginLeft')) + increment <= 0) {
+        $carousel.css('marginLeft', '+=' + increment);
+      } else {
+        $carousel.css('marginLeft', 0);
+      }
+    });
+
+    $next.click(function() {
+      if (parseInt($carousel.css('marginLeft')) - increment > -(totalWidth - increment)) {
+        $carousel.css('marginLeft', '-=' + increment);
+      } else {
+        $carousel.css('marginLeft', -(totalWidth - increment + 24));
+      }
+    });
+
+  })
+
+}
+
+
+
+
+
+

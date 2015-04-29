@@ -49,9 +49,9 @@
       .prev, .next{
         position: absolute;
         padding: 0 .5em;
-        background: rgba(245,245,245,.95);
+        background: rgba(245,245,245,.9);
         color: $blue;
-        line-height: $cols1 * 2;
+        line-height: 100%;
         font-size: 2em;
         transition: transform .25s;
         cursor: pointer;
@@ -61,17 +61,16 @@
     .artwork-link{
       margin-right: $gutter;
       flex-shrink: 0;
-      //&:last-child{ margin-right: 0; }
     }
 
     .artwork-link > a > img{ width: $cols3; }
 
-    // @media (min-width: $cols5)  { .artwork-link > a > img{ width: ($cols5  / 2) - ($gutter * .5    )/$em; }}
-    // @media (min-width: $cols6)  { .artwork-link > a > img{ width: ($cols6  / 2) - ($gutter * .5    )/$em; }}
-    // @media (min-width: $cols9)  { .artwork-link > a > img{ width: ($cols8  / 3) - ($gutter * .667  )/$em; }}
-    // @media (min-width: $cols10) { .artwork-link > a > img{ width: ($cols9 / 4) - ($gutter * .75   )/$em; }}
-    // @media (min-width: $cols18) { .artwork-link > a > img{ width: ($cols17 / 6) - ($gutter * 1.334 )/$em; }}
-    // @media (min-width: $cols27) { .artwork-link > a > img{ width: ($cols26 / 9) - ($gutter * 2.667 )/$em; }}
+    @media (min-width: $cols5)  { .artwork-link > a > img{ width: ($cols5  / 2) - ($gutter * .5    )/$em; }}
+    @media (min-width: $cols6)  { .artwork-link > a > img{ width: ($cols6  / 2) - ($gutter * .5    )/$em; }}
+    @media (min-width: $cols9)  { .artwork-link > a > img{ width: ($cols8  / 3) - ($gutter * .667  )/$em; }}
+    @media (min-width: $cols10) { .artwork-link > a > img{ width: ($cols9 / 4) - ($gutter * .75   )/$em; }}
+    @media (min-width: $cols18) { .artwork-link > a > img{ width: ($cols17 / 6) - ($gutter * 1.334 )/$em; }}
+    @media (min-width: $cols27) { .artwork-link > a > img{ width: ($cols26 / 9) - ($gutter * 2.667 )/$em; }}
 
 
 
