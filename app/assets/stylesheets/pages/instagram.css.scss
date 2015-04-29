@@ -7,10 +7,44 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  img{
-    width: $cols3;
-    margin-bottom: $gutter; 
+  a{ 
+    position: relative;
+    overflow: hidden;
+    margin-bottom: $gutter;
+
+    &:hover:before, &:hover:after{ opacity: 1; }
+    &:before, &:after{
+      color: white;
+      background: rgba(0,0,0,.75);
+      padding: .25em;
+      opacity: 0;
+      transition: opacity .5s;
+    }
+    &:before{ 
+      content: attr(data-caption); 
+      position: absolute; 
+      display: block;
+    }
+    &:after{ 
+      content: attr(data-likes); 
+      position: absolute; 
+      bottom:0; right:0;
+    }
   }
+  img{ width: $cols3; }
+}
+
+#load-more{
+  border: none;
+  border-radius: 0;
+  margin: 0 auto;
+  width: $cols2;
+  color: $grey-dark;
+  background: $grey-med;
+  font-size: 2em;
+  width: 100%;
+  cursor: pointer;
+
 }
 
 // Media Queries
@@ -18,8 +52,6 @@
 @media (min-width: $cols5)  { #instafeed img{ width: ($cols5  / 2) - ($gutter * .5    )/$em; }}
 @media (min-width: $cols6)  { #instafeed img{ width: ($cols6  / 2) - ($gutter * .5    )/$em; }}
 @media (min-width: $cols9)  { #instafeed img{ width: ($cols8  / 3) - ($gutter * .667  )/$em; }}
-@media (min-width: $cols10) { #instafeed img{ width: ($cols9 / 4) - ($gutter * .75   )/$em; }}
-
+@media (min-width: $cols10) { #instafeed img{ width: ($cols9  / 4) - ($gutter * .75   )/$em; }}
 @media (min-width: $cols18) { #instafeed img{ width: ($cols17 / 6) - ($gutter * 1.334 )/$em; }}
-
 @media (min-width: $cols27) { #instafeed img{ width: ($cols26 / 9) - ($gutter * 2.667 )/$em; }}
