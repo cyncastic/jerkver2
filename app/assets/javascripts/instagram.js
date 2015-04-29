@@ -9,9 +9,6 @@ $(document).ready(function() {
 // The function
 var instagramPage = function(){
 
-
-
-
   if($('#instafeed').length){
 
     var loadButton = document.getElementById('load-more'),
@@ -21,10 +18,16 @@ var instagramPage = function(){
           userId      : 46255315,
           accessToken : '408253310.1677ed0.c650b85839fd45c38dc5af6d5ce1db41',
           get         : 'user',
-          tagName     : 'jerkface', // ???
-          sortBy      : 'most-liked',
+          resolution  : 'standard_resolution',
           limit       : 12,
           template    : '<a data-likes="{{likes}}" data-caption="{{caption}}"><img src="{{image}}" /></a>',
+
+          sortBy      : 'random',
+
+          filter: function(image) {
+            return image;
+            //return image.tags.indexOf('jerkface') >= 0;
+          },
 
           after: function() {
             // disable button if no more results to load
@@ -40,9 +43,9 @@ var instagramPage = function(){
     });
 
     instaFeed.run();
-
   }
-
-
-
 }
+
+
+$('#instafeed a:before').textfill({ maxFontPixels: 36 });
+
