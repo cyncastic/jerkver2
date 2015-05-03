@@ -19,7 +19,7 @@ var instagramPage = function(){
           accessToken : '408253310.1677ed0.c650b85839fd45c38dc5af6d5ce1db41',
           get         : 'user',
           resolution  : 'standard_resolution',
-          limit       : 12,
+          limit       : 6,
           template    : '<a data-likes="{{likes}}" data-caption="{{caption}}"><img src="{{image}}" /></a>',
 
           sortBy      : 'random',

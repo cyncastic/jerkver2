@@ -8,9 +8,6 @@ class StaticController < ApplicationController
     @artwork = *Artwork.order("RANDOM()").first
   end
 
-  def instagram
-  end
-
   def abstract
   end
 

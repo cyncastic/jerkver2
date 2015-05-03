@@ -17,8 +17,8 @@
         %nav.nav
           %ul#nav-list
             // %li.nav-link.admin= link_to 'ADMIN', '/admin', class: cp('/admin')
+            %li.nav-link= link_to 'Home', root_url, class: cp(root_url)
             %li.nav-link= link_to 'Work', work_path, class: cp(work_path)
-            %li.nav-link= link_to 'Instagram', instagram_path, class: cp(instagram_path)
             %li.nav-link= link_to 'Abstract', abstract_path, class: cp(abstract_path)
             %li.nav-link= link_to 'Contact', contact_path, class: cp(contact_path)
 
