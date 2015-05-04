@@ -9,8 +9,8 @@
 
 - @categories.each do |category| 
   - if category.artworks.any?
+    %h2= category.name
     .artwork-conveyor{ class: category.name }
-      %h2= category.name
       - if category.artworks.count > 2
         %a.navigation.prev &laquo;
         %a.navigation.next &raquo;
