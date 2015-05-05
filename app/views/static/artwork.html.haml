@@ -17,5 +17,5 @@
       %ul
         - category.artworks.each do |artwork|
           %li.artwork-link
-            %a{ href: artwork.image_url(:large).to_s, data: { title: artwork.title, year: artwork.year, medium: artwork.medium }}
+            %a{ href: artwork.image_url(:large).to_s, data: { title: artwork.title, year: artwork.year, medium: artwork.medium, size: category.name.to_s }}
               %img{ src: artwork.image_url(:thumb).to_s, alt: artwork.title}
