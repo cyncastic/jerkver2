@@ -27,7 +27,7 @@
   }
 
   .no-touch .artwork-conveyor{
-    &:hover{ .prev, .next{ transform: translateX(0); }} 
+    &:hover{ .prev, .next{ &.active{ transform: translateX(0); }}}
     > ul{
       overflow: hidden;
       transition: all 1s;
