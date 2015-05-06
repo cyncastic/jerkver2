@@ -11,7 +11,12 @@ var setCarousel = function(){
   $artwork.click(function(e) {
     e.preventDefault();
 
-    $image.attr('src', this.href);
+    $image.addClass('loading');
+
+    $image.attr('src', this.href)
+      .load(function() {
+        $image.removeClass('loading');
+      });
 
     $title.text($(this).attr('data-title'));
     $size.text($(this).attr('data-size'));
