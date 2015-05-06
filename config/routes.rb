@@ -9,14 +9,22 @@ Rails.application.routes.draw do
 
   scope "/admin" do
 
-    get '/' => 'static#admin'
-
+    resources :users
+    
     resources :artworks do
       collection do
         post :sort
       end
     end
     
+  end
+
+  get '/admin' => 'static#admin'
+
+  controller :sessions do
+    get 'login' => :new
+    post 'login' => :create
+    delete 'logout' => :destroy
   end
 
 end
