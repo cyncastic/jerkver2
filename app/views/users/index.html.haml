@@ -2,9 +2,6 @@
 
   %h1 listing users
 
-  - if notice
-    %p#notice= notice
-
   %table.admintable
     %thead
       %tr
@@ -16,6 +13,6 @@
           %td= user.name
           %td{ class: 'actions' }
             = link_to 'Edit', edit_user_path(user)
-            = link_to 'Destroy', user, method: :delete, class: "delete_btn", data: {confirm: 'Are you sure?', remote: true}
+            = link_to 'Destroy', user, method: :delete, class: "delete_btn", data: {confirm: 'Are you sure?'}
 
   = link_to 'New User', new_user_path, class: 'push_4 grid_1 btn'

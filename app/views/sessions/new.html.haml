@@ -1,14 +1,16 @@
-%h1 log in
+%section.admin
 
-- if flash[:alert]
-  %p{ :id => "notice"}= flash[:alert]
+  %h1 log in
 
-= form_tag do
-  .field
-    = label_tag :name, 'Name:'
-    = text_field_tag :name, params[:name]
-  .field
-    = label_tag :password, 'Password:'
-    = password_field_tag :password, params[:password]
-  .actions
-    = submit_tag "Login", class: 'btn'
+  - if flash[:alert]
+    %p{ :id => "notice"}= flash[:alert]
+
+  = form_tag do
+    .field
+      = label_tag :name, 'Name:'
+      = text_field_tag :name, params[:name]
+    .field
+      = label_tag :password, 'Password:'
+      = password_field_tag :password, params[:password]
+    .actions
+      = submit_tag "Login", class: 'btn'
