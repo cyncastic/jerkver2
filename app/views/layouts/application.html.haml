@@ -21,6 +21,8 @@
             %li.nav-link= link_to 'Work', work_path, class: cp(work_path)
             %li.nav-link= link_to 'Abstract', abstract_path, class: cp(abstract_path)
             %li.nav-link= link_to 'Contact', contact_path, class: cp(contact_path)
+            - if session[:user_id]
+              %li.nav-link= link_to 'Admin', admin_path, class: cp(admin_path)
 
       .content(data-pjax-container)
         - if notice
