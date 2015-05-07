@@ -12,7 +12,8 @@
     flex-direction: column;
     align-items: center;
     > h1{ 
-      font-size: 1.5em; 
+      font-size: 1.5em;
+      text-transform: uppercase;
       &:after{
         content: url(/assets/drip.svg);
         display: inline-block;
@@ -24,6 +25,7 @@
   }
 
   .nav-link > a{
+    text-transform: uppercase;
     font-size: .75em;
     transition: all .25s cubic-bezier(1.000, -0.195, 0.000, 1.215);
     .vowel{

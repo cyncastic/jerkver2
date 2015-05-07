@@ -3,6 +3,7 @@ class ArtworksController < ApplicationController
 
   # GET /artworks
   def index
+    @categories = Category.all
     @artworks = Artwork.all.order("position")
   end
 

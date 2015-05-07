@@ -3,32 +3,66 @@
 //
 
 section.admin{
+  color: $grey-darker;
+  background: white;
+  padding: 0 1em 1em;
+  border: 1px $grey-med solid;
+  border-radius: 2px;
 
-  background: #fcfcfc;
-  padding: 1em;
+  h1{ font-size: 2em; line-height: 1.5em; margin-bottom: .5em;  }
+  h2{ font-size: 1.25em; line-height: 1.25em; }
 
-  h1{ font-size: 2em; line-height: 1.5em;  }
-  h2{ font-size: 1.5em; line-height: 1.25em; }
+  ul{ padding: 0 1em 1em; }
 
   table{
     width: 100%;
     text-align: left;
     background: white;
-    th{
-      color: $grey-darker;
-      font-size: 1.125em;
-    }
+    border: 1px solid $grey-med;
+    margin-bottom: 1em;
     td, th{ 
       padding: .25em;
       border-bottom: 1px $grey-light dotted;
+      border-top: 1px solid #ddd;
+      padding: 4px 8px;
+      vertical-align: middle;
     }
+    th{
+      color: $grey-darker;
+      background: $grey-light;
+      font-size: 1.125em;
+      &.category{ text-align: center; }
+    }
+    td{ font-size: .9em; }
   }
 
-  a{ color: $pink; }
+
+  a{
+    color: $blue;
+    &.logout{ 
+      display: block;
+      color: $pink; 
+      text-align: right; }
+  }
 
   label{
     display: inline-block;
     width: $cols2;
   }
 
+}
+
+
+
+
+
+@media (max-width: $cols9 ){
+  section.admin .year,
+  section.admin .medium,{
+    display:none;
+    width:0;
+    height:0;
+    opacity:0;
+    visibility: collapse;       
+  } 
 }
