@@ -1,5 +1,5 @@
 - @artwork.each do |artwork|
-  .artwork-holder
+  .artwork-holder.loading
     =image_tag artwork.image_url(:large).to_s, alt: artwork.title
     %ul.artwork-details
       %li.artwork-title=  artwork.title
@@ -17,5 +17,5 @@
       %ul
         - category.artworks.each do |artwork|
           %li.artwork-link
-            %a{ href: artwork.image_url(:large).to_s, data: { title: artwork.title, year: artwork.year, medium: artwork.medium, size: category.name.to_s }}
+            %a.loading{ href: artwork.image_url(:large).to_s, data: { title: artwork.title, year: artwork.year, medium: artwork.medium, size: category.name.to_s }}
               %img{ src: artwork.image_url(:thumb).to_s, alt: artwork.title}

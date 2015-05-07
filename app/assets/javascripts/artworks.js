@@ -1,21 +1,30 @@
 var setCarousel = function(){
 
 
-  var $image   = $('.artwork-holder > img'),
-      $artwork = $('.artwork-link a'),
-      $title   = $('.artwork-title'),
-      $size    = $('.artwork-size'),
-      $medium  = $('.artwork-medium'),
-      $year    = $('.artwork-year');
+  var $holder   = $('.artwork-holder'),
+      $image    = $('.artwork-holder > img'),
+      $artworks = $('.artwork-link a'),
+      $title    = $('.artwork-title'),
+      $size     = $('.artwork-size'),
+      $medium   = $('.artwork-medium'),
+      $year     = $('.artwork-year');
 
-  $artwork.click(function(e) {
+
+  $image.load(function() {
+    $holder.removeClass('loading');
+  });
+  $('img', $artworks).load(function() {
+    $(this).parent('a').removeClass('loading');
+  });
+
+  $artworks.click(function(e) {
     e.preventDefault();
 
-    $image.addClass('loading');
+    $holder.addClass('loading');
 
     $image.attr('src', this.href)
       .load(function() {
-        $image.removeClass('loading');
+        $holder.removeClass('loading');
       });
 
     $title.text($(this).attr('data-title'));
