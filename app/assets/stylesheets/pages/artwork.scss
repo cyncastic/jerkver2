@@ -5,7 +5,7 @@
   .artwork-holder{
     max-height: 70vmin;
     max-width: 70vmin;
-    margin: 0 auto;
+    margin: 0 auto 2em;
     &.loading{
       background-image: url(/assets/load.svg);
       background-position: left 50% bottom 50%;
