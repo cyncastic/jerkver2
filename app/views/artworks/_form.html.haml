@@ -19,7 +19,7 @@
     = f.text_field :medium, value: 'Acrylic on Canvas'
   .field
     = f.label :year
-    = f.select :year, (2000..Time.now.year).to_a.reverse, { prompt: false }
+    = f.select :year, (Time.now.year-3..Time.now.year).to_a.reverse, { prompt: false }
   .field
     = f.label :image
     = f.file_field :image
