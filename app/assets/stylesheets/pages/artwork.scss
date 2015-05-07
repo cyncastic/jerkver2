@@ -7,7 +7,7 @@
     max-width: 70vmin;
     margin: 0 auto 2em;
     &.loading{
-      background-image: url(/assets/load.svg);
+      background-image: url(https://s3.amazonaws.com/jerkfacev2/static/load.svg);
       background-position: left 50% bottom 50%;
       > img{ opacity: 0; }
     }
@@ -82,7 +82,7 @@
       display: block;
       background-color: $grey-med;
       &.loading{ 
-        background-image: url(/assets/load.svg); 
+        background-image: url(https://s3.amazonaws.com/jerkfacev2/static/load.svg); 
         > img{ opacity: 0; transition: opacity .5s; }
       }
       > img{
