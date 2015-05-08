@@ -15,7 +15,7 @@ $(document).ready(function($) {
   $navLinks.hover( 
     function(){
       $('.vowel', this).each( function(){ 
-        $(this).width($(this).attr('data-width')) 
+        $(this).width($(this).attr('data-width'));
       });
     }, 
     function(){
