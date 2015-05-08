@@ -18,7 +18,7 @@
 
 //= require_tree .
 
-$(document).pjax('.nav-link a', '[data-pjax-container]')
+$(document).pjax('.nav-link a', '[data-pjax-container]');
 
 // Call on Pjax load
 $(document).on('pjax:success', function() {
