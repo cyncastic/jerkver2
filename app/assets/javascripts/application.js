@@ -14,14 +14,12 @@
 //= require jquery-ui/sortable
 //= require jquery_ujs
 //= require jquery.pjax
-
-
 //= require_tree .
 
 $(document).pjax('.nav-link a', '[data-pjax-container]');
 
 // Call on Pjax load
-$(document).on('pjax:success', function() {
+$(document).on('pjax:success', function () {
   setCarousel();
   instagramPage();
 });
