@@ -2,34 +2,6 @@
 //  Artwork
 //---------------------------------------------------------------------------------------------
 
-  .artwork-holder{
-    max-height: 70vmin;
-    max-width: 70vmin;
-    margin: 0 auto 2em;
-    &.loading{
-      background-image: url(https://s3.amazonaws.com/jerkfacev2/static/load.svg);
-      background-position: left 50% bottom 50%;
-      > img{ opacity: 0; }
-    }
-    > img{
-      max-height: 70vmin;
-      max-width: 70vmin;
-      
-      //object-fit: contain;
-      opacity: 1;
-      transition: opacity .5s;
-    }
-    .artwork-details{
-      font-size: .7em;
-      text-align: right;
-      > li{ 
-        display: inline;
-        &:after{ content: " /"; }
-        &:last-child:after { content: none; }
-      }
-    }
-  }
-
   
 
   .touch .artwork-conveyor > ul{
@@ -62,6 +34,7 @@
     .prev, .next{
       position: absolute;
       top: 0;  bottom: 0;
+      z-index: 1000;
       margin: auto;
       padding: 0 .5em;
       background: rgba(245,245,245,.9);
@@ -79,16 +52,22 @@
     margin-right: $gutter;
     flex-shrink: 0;
     > a{
+      position: relative;
+      z-index: 100;
       display: block;
       background-color: $grey-med;
       &.loading{ 
         background-image: url(https://s3.amazonaws.com/jerkfacev2/static/load.svg); 
         > img{ opacity: 0; transition: opacity .5s; }
       }
+      &:hover > img{ filter: grayscale(0%); }
       > img{
+        position: relative;
         opacity: 1;
         width: 100%;
-        transition: opacity .5s; 
+        transition: opacity .5s;
+        filter: grayscale(100%);
+        transition : all .25s;
       }
     }
   }

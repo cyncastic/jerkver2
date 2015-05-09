@@ -45,7 +45,3 @@ var instagramPage = function(){
     instaFeed.run();
   }
 }
-
-
-$('#instafeed a:before').textfill({ maxFontPixels: 36 });
-
