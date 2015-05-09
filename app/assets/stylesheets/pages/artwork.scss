@@ -60,13 +60,13 @@
         background-image: url(https://s3.amazonaws.com/jerkfacev2/static/load.svg); 
         > img{ opacity: 0; transition: opacity .5s; }
       }
-      &:hover > img{ filter: grayscale(0%); }
+      &:hover > img{ filter: saturate(100%); }
       > img{
         position: relative;
         opacity: 1;
         width: 100%;
         transition: opacity .5s;
-        filter: grayscale(100%);
+        filter: saturate(20%);
         transition : all .25s;
       }
     }
