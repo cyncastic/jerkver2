@@ -2,17 +2,15 @@
 //  Artwork
 //---------------------------------------------------------------------------------------------
 
-  
-
   .touch .artwork-conveyor > ul{
     -webkit-overflow-scrolling: touch;
     overflow: scroll;
   }
 
   .no-touch .artwork-conveyor{
-    &:hover{ .prev, .next{ &.active{ transform: translateX(0); }}}
+    &:hover{ .prev, .next{ transform: translateX(0); }}
     > ul{
-      overflow: hidden;
+      //overflow: hidden;
       transition: all 1s;
     }
   }
@@ -26,6 +24,7 @@
     > ul{
       display: flex;
       flex-wrap: nowrap;
+
     }
 
     .prev{ left:  0;   transform: translateX(-1.5em); }
@@ -42,6 +41,7 @@
       font-size: 2em;
       transition: transform .25s;
       cursor: pointer;
+      user-select: none;
 
       height: 100%;
       display: table;
@@ -49,25 +49,28 @@
   }
 
   .artwork-link{
-    margin-right: $gutter;
     flex-shrink: 0;
+    border-right: 24px solid $grey-light;
+    order: 2;
+    &.is-ref{ order: 1; }
     > a{
       position: relative;
       z-index: 100;
       display: block;
-      background-color: $grey-med;
+      overflow: hidden;
+      border-radius: 3px;
       &.loading{ 
         background-image: url(https://s3.amazonaws.com/jerkfacev2/static/load.svg); 
         > img{ opacity: 0; transition: opacity .5s; }
       }
-      &:hover > img{ filter: saturate(100%); }
+      &:hover > img{ filter: none; transform: scale(1.33); transition : all .125s; }
       > img{
         position: relative;
         opacity: 1;
         width: 100%;
         transition: opacity .5s;
-        filter: saturate(20%);
-        transition : all .25s;
+        filter: grayscale(.85) opacity(.75);
+        transition : all .75s;
       }
     }
   }

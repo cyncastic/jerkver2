@@ -1,12 +1,15 @@
 - @categories.each do |category| 
   - if category.artworks.any?
+
     %h2= category.name
-    .artwork-conveyor{ class: category.name }
+
+    .artwork-conveyor.is-set{ class: category.name }
       - if category.artworks.count > 2
         %a.navigation.prev &laquo;
         %a.navigation.next &raquo;
+
       %ul
-        - category.artworks.each do |artwork|
-          %li.artwork-link
+        - category.artworks.each_with_index do |artwork, index|
+          %li.artwork-link.is-set{ class: ('is-ref' if index==category.artworks.length-1)}
             %a.loading{ href: artwork.image_url(:large).to_s, data: { title: artwork.title, year: artwork.year, medium: artwork.medium, size: category.name.to_s }}
               %img{ src: artwork.image_url(:thumb).to_s, alt: artwork.title}
