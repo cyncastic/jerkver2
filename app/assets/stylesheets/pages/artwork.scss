@@ -58,6 +58,7 @@
       display: block;
       overflow: hidden;
       border-radius: 3px;
+      background-color: white;
       &.loading{ 
         background-image: url(https://s3.amazonaws.com/jerkfacev2/static/load.svg); 
         > img{ opacity: 0; transition: opacity .5s; }
@@ -68,7 +69,7 @@
         opacity: 1;
         width: 100%;
         transition: opacity .5s;
-        filter: grayscale(.85) opacity(.75);
+        filter: grayscale(.75) opacity(.75);
         transition : all .75s;
       }
     }
