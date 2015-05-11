@@ -49,7 +49,7 @@
 
   .artwork-link{
     flex-shrink: 0;
-    border-right: 24px solid white;
+    border-right: 24px solid $grey-light;
     order: 2;
     &.is-ref{ order: 1; }
     > a{
