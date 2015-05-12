@@ -2,13 +2,25 @@
 //  Artwork
 //---------------------------------------------------------------------------------------------
 
-  .touch .artwork-conveyor > ul{
-    -webkit-overflow-scrolling: touch;
-    overflow: scroll;
+  .touch{
+    .artwork-conveyor > ul{
+      -webkit-overflow-scrolling: touch;
+      overflow: scroll;
+    }
+    .artwork-link:last-child{ border: none }
   }
 
   .no-touch .artwork-conveyor{
     &:hover{ .prev, .next{ transform: translateX(0); }}
+    > ul.is-set{
+      transform: none!important;
+      transition: transform .5s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .artwork-link{
+      order: 2;
+      &.is-ref{ order: 1; }
+      a:hover > img{ filter: none; transform: scale(1.33); transition : all .125s; }
+    }
   }
 
   .artwork-conveyor{
@@ -19,10 +31,6 @@
     > ul{
       display: flex;
       position: relative;
-      &.is-set{
-        transform: none!important;
-        transition: transform .5s cubic-bezier(0.23, 1, 0.32, 1);
-      }
     }
 
     .prev{ left:  0;   transform: translateX(-1.5em); }
@@ -50,8 +58,6 @@
   .artwork-link{
     flex-shrink: 0;
     border-right: 24px solid $grey-light;
-    order: 2;
-    &.is-ref{ order: 1; }
     > a{
       position: relative;
       z-index: 100;
@@ -63,12 +69,10 @@
         background-image: url(https://s3.amazonaws.com/jerkfacev2/static/load.svg); 
         > img{ opacity: 0; transition: opacity .5s; }
       }
-      &:hover > img{ filter: none; transform: scale(1.33); transition : all .125s; }
       > img{
         position: relative;
         opacity: 1;
         width: 100%;
-        transition: opacity .5s;
         filter: grayscale(.1) opacity(.75);
         transition : all .75s;
       }
@@ -81,7 +85,7 @@
 //---------------------------------------------------------------------------------------------
   
   @media (min-width: $cols5)  { 
-    .artwork-conveyor ul{
+    .no-touch .artwork-conveyor ul{
       left:                (     ($cols5 / 2) + ($gutter * .5) / $em ) * -1;
       transform: translateX(     ($cols5 / 2) + ($gutter * .5) / $em );
       &.is-reversing{
@@ -89,13 +93,13 @@
       }
     }
     .artwork-link > a { 
-      width: ($cols5  / 2) - ($gutter * .5    )/$em; 
+      width:  ($cols5  / 2) - ($gutter * .5    )/$em; 
       height: ($cols5  / 2) - ($gutter * .5    )/$em; 
     }
   }
   
   @media (min-width: $cols6)  { 
-    .artwork-conveyor ul{
+    .no-touch .artwork-conveyor ul{
       left:                (     ($cols6 / 2) + ($gutter * .5) / $em ) * -1;
       transform: translateX(     ($cols6 / 2) + ($gutter * .5) / $em );
       &.is-reversing{
@@ -109,7 +113,7 @@
   }
   
   @media (min-width: $cols9)  { 
-    .artwork-conveyor ul{
+    .no-touch .artwork-conveyor ul{
       left:                (     ($cols8 / 3) + ($gutter * .33) / $em ) * -1;
       transform: translateX(     ($cols8 / 3) + ($gutter * .33) / $em );
       &.is-reversing{
@@ -123,7 +127,7 @@
   }
 
   @media (min-width: $cols10) { 
-    .artwork-conveyor ul{
+    .no-touch .artwork-conveyor ul{
       left:                (     ($cols9 / 4) + ($gutter * .25) / $em ) * -1;
       transform: translateX(     ($cols9 / 4) + ($gutter * .25) / $em );
       &.is-reversing{
@@ -137,14 +141,14 @@
   }
   
   @media (min-width: $cols18) { 
-    .artwork-conveyor ul{
+    .no-touch .artwork-conveyor ul{
       left:                (     ($cols17 / 6) + ($gutter * -.33) / $em ) * -1;
       transform: translateX(     ($cols17 / 6) + ($gutter * -.33) / $em );
       &.is-reversing{
         transform: translateX( ( ($cols17 / 6) + ($gutter * -.33) / $em ) * -1 );
       }
     }
-    .artwork-link > a { 
+    .no-touch .artwork-link > a { 
       width: ($cols17 / 6) - ($gutter * 1.334 )/$em; 
       height: ($cols17 / 6) - ($gutter * 1.334 )/$em; 
     }
