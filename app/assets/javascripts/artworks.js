@@ -40,9 +40,6 @@ var setCarousel = function () {
         $carousel.addClass('is-reversing');
       }
 
-
-
-
       $(new_seat).addClass('is-ref').css('order', 1);
 
       for (i = j = 2, ref = $seats.length; 2 <= ref ? j <= ref : j >= ref; i = 2 <= ref ? ++j : --j) {
