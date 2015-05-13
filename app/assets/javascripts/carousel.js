@@ -26,7 +26,6 @@ var setCarousel = function () {
       return e;
     };
 
-
     $toggle.click(function () {
       var el, i, j, new_seat, ref;
 
@@ -53,15 +52,7 @@ var setCarousel = function () {
 
     });
 
-
-
   });
-
-
-
-
-
-
 
 
   var $artworks = $('.artwork-link a');
@@ -70,8 +61,9 @@ var setCarousel = function () {
     $(this).parent('a').removeClass('loading');
   });
 
-  $artworks.click(function (e) { e.preventDefault(); });
-
+  $artworks.click(function () {
+    jerkbox(this);
+  });
 
 };
 
