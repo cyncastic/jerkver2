@@ -45,8 +45,6 @@
     width: $cols3;
   }
 
-
-
   .footer{
     line-height: 1.5em;
     > p{
@@ -55,7 +53,6 @@
       margin-right: .5em;
     }
   }
-
 
 //---------------------------------------------------------------------------------------------
 //  Media Queries
@@ -98,10 +95,6 @@
 
 
 
-
-
-
-
   // Cycle through sizes
   @for $i from 2 through 27 {
     @media screen and (min-width: ($i * ($column + $gutter) - $gutter) / $em) { 
@@ -114,24 +107,5 @@
     padding: 0 .5em;
     color: $pink;
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
