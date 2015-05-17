@@ -1,11 +1,23 @@
 var setCarousel = function () {
 
+  //  Remove the loading image when image is loaded.
+  $('.artwork-link img').load(function () {
+    $(this).parent('a').removeClass('loading');
+  // fix the JQ load problem with cached images
+  }).each(function () {
+    if (this.complete) {
+      $(this).trigger('load');
+    }
+  });
+
   // Set the flexbox carousel for each conveyor
   $('.artwork-conveyor').each(function () {
 
     var $toggle = $('.toggle', this),
       $carousel = $('ul', this),
-      $seats = $('.artwork-link', this);
+      $seats = $('.artwork-link', this),
+      elTrigger,
+      myInterval;
 
     var next = function (el) {
       var e;
@@ -53,22 +65,27 @@ var setCarousel = function () {
 
     });
 
+    $toggle.hover(
+      function () {
+        elTrigger = this;
+        $(elTrigger).trigger('click');
+        myInterval = setInterval(function () {
+          $(elTrigger).trigger('click');
+        }, 1000);
+      },
+      function () {
+        clearInterval(myInterval);
+      }
+    );
+
   });
 
-  //  Remove the loading image when image is loaded.
-  $('.artwork-link img').load(function () {
-    $(this).parent('a').removeClass('loading');
-  }).each(function () {
-    if (this.complete) {
-      $(this).trigger('load');
-    }
-  });
-
-  //
+  // Have the jerkbox load on clicks
   $('.artwork-link a').click(function (e) {
-    e.preventDefault();
 
-    var t = document.querySelector('#jerkbox');
+    var t = document.querySelector('#jerkbox'),
+      clone,
+      addOpen;
 
     // Populate the src.
     t.content.querySelector('img').src = this.href;
@@ -77,26 +94,25 @@ var setCarousel = function () {
     t.content.querySelector('li.year').textContent   = this.getAttribute('data-year');
     t.content.querySelector('li.medium').textContent = this.getAttribute('data-medium');
 
-    var clone = document.importNode(t.content, true);
+    clone = document.importNode(t.content, true);
     document.body.appendChild(clone);
 
-    t.content.querySelector('.jerkbox').addEventListener('click', function () {
-      console.log('adf');
+    document.querySelector('.jerkbox .close').addEventListener('click', function () {
       document.querySelector('.jerkbox').remove();
     }, false);
 
+
     $(document).keyup(function (e) {
       // escape key maps to keycode `27`
-      if (e.keyCode === 27) {
-        document.querySelector('.jerkbox') && document.querySelector('.jerkbox').remove();
+      if (e.keyCode === 27 && document.querySelector('.jerkbox')) {
+        document.querySelector('.jerkbox').remove();
       }
     });
 
+    e.preventDefault();
   });
 
 };
 
 // Call on page load
-$(document).ready(function () {
-  setCarousel();
-});
+$(document).ready(function () { setCarousel(); });
