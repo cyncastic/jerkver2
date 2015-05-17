@@ -43,7 +43,8 @@
       margin: auto;
       padding: 0 .5em;
       background: rgba(245,245,245,.9);
-      color: $blue;
+      color: $grey-darker;
+      font-weight: 300;
       font-size: 2em;
       transition: transform .25s;
       cursor: pointer;

@@ -1,5 +1,6 @@
 var setCarousel = function () {
 
+  // Set the flexbox carousel for each conveyor
   $('.artwork-conveyor').each(function () {
 
     var $toggle = $('.toggle', this),
@@ -54,15 +55,43 @@ var setCarousel = function () {
 
   });
 
-
-  var $artworks = $('.artwork-link a');
-
-  $('img', $artworks).load(function () {
+  //  Remove the loading image when image is loaded.
+  $('.artwork-link img').load(function () {
     $(this).parent('a').removeClass('loading');
+  }).each(function () {
+    if (this.complete) {
+      $(this).trigger('load');
+    }
   });
 
-  $artworks.click(function () {
-    jerkbox(this);
+  //
+  $('.artwork-link a').click(function (e) {
+    e.preventDefault();
+
+    var t = document.querySelector('#jerkbox');
+
+    // Populate the src.
+    t.content.querySelector('img').src = this.href;
+    t.content.querySelector('li.title').textContent  = this.getAttribute('data-title');
+    t.content.querySelector('li.size').textContent   = this.getAttribute('data-size');
+    t.content.querySelector('li.year').textContent   = this.getAttribute('data-year');
+    t.content.querySelector('li.medium').textContent = this.getAttribute('data-medium');
+
+    var clone = document.importNode(t.content, true);
+    document.body.appendChild(clone);
+
+    t.content.querySelector('.jerkbox').addEventListener('click', function () {
+      console.log('adf');
+      document.querySelector('.jerkbox').remove();
+    }, false);
+
+    $(document).keyup(function (e) {
+      // escape key maps to keycode `27`
+      if (e.keyCode === 27) {
+        document.querySelector('.jerkbox') && document.querySelector('.jerkbox').remove();
+      }
+    });
+
   });
 
 };
