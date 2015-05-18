@@ -13,26 +13,29 @@
     height: 100vh;
     width: 100vw;
     background: rgba(250,250,250,.9);
-    animation: fadein 300ms;
+    animation: jerkfadein .5s;
+    &.close{ animation: jerkfadeout .25s; }
     a{
-      color: $grey-darker; 
-      font-size: 2em; 
+      color: $grey-dark; 
+      font-size: 1em; 
       font-weight: 300;
-      transition: color .125s;
-      transition: background-color .5s;
+      transition: background-color .5s, color .25s;
       &:hover{ 
         background: white;
         color: $grey-darker;
       }
       &.close{ 
         position: absolute; 
-        top:  1em;  right: 1em; 
+        top:  -1.5em;  right: -1.5em; 
         font-weight: 400;
+        position: absolute;
+        top: -1em; right: -1em;
+        border: $grey-med 2px solid;
+        border-radius: 5em;
+        padding: .5em;
+        line-height: .5em;
       }
-      &.prev, .next{ 
-        background-color: $grey-light; 
-        flex-shrink: 0; 
-      }
+      &.prev, &.next{ flex-shrink: 0; font-size: 2em; }
       &.prev{ padding: 1em .25em 1em .75em; }
       &.next{ padding: 1em .75em 1em .25em; }
     }
@@ -41,17 +44,6 @@
   .jerkbox-img{
     position: relative;
     flex-shrink: 0;
-    .close{
-      position: absolute;
-      top: -1em; right: -1em;
-      font-size: 1em;
-      background-color: $grey-light;
-      border: $grey-med 2px solid;
-      border-radius: 5em;
-      padding: .5em;
-      line-height: .5em;
-      cursor: pointer;
-    }
     > img{
       max-width:  80vmin;
       max-height: 80vmin;
@@ -60,9 +52,9 @@
 
   .jerkbox-details{ 
     display: block;
+    text-align: right;
     > li{
-      text-align: right;
-      font-size: 2.25vmin;
+      font-size: 2.125vmin;
       display: inline-block;
       &:after{ content: " /"; }
       &:last-child:after{ content: none; }
@@ -70,7 +62,13 @@
   }
   
 
-  @keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
+  @keyframes jerkfadein {
+    0%   { opacity: 0; transform: rotate(11.25deg) scale(.75); }
+    33%  { transform: none; }
+    100% { opacity: 1; }
+  }
+  @keyframes jerkfadein {
+    0%   { opacity: 1;  }
+    33%  { transform: rotate(-11.25deg) scale(.25); }
+    100% { opacity: 0; }
+  }
