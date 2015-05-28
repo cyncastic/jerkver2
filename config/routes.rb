@@ -3,8 +3,6 @@ Rails.application.routes.draw do
   root 'static#home'
 
   get 'work' => 'static#artwork'
-  get 'instagram' => 'static#instagram'
-  get 'abstract' => 'static#abstract'
   get 'contact' => 'static#contact'
 
   scope "/admin" do
