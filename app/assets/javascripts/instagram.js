@@ -20,7 +20,7 @@ var instagramPage = function(){
           get         : 'user',
           resolution  : 'standard_resolution',
           limit       : 6,
-          template    : '<a data-likes="{{likes}}" data-caption="{{caption}}"><img src="{{image}}" /></a>',
+          template    : '<a href="{{link}}" target="_blank" data-likes="{{likes}}" data-caption="{{caption}}"><img src="{{image}}" /></a>',
 
           sortBy      : 'random',
 
