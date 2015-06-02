@@ -7,10 +7,10 @@ class StaticController < ApplicationController
 
   def artwork
     @categories = Category.all
-    @artwork = *Artwork.order("RANDOM()").first
   end
 
-  def abstract
+  def walls
+    @years = Wall.uniq.pluck(:year)
   end
 
   def contact

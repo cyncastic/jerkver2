@@ -8,7 +8,7 @@
         - @artwork.errors.full_messages.each do |msg|
           %li= msg
           
-  .fie
+  .field
     = f.label :category_id
     = f.collection_select(:category_id, Category.all, :id, :name, { selected: params[:category_id] })
   .field

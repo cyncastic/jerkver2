@@ -1,0 +1,25 @@
+%section.admin
+  %h1 Listing Walls
+
+  %table
+    %thead
+      %tr
+        %th
+        %th Title
+        %th.year Year
+        %th.location Location
+        %th
+    %tbody.sorts{ data: { update_url: sort_artworks_url } }
+      - @walls.each do |wall|
+        = content_tag_for :tr, wall do
+          %td= image_tag wall.image_url(:icon).to_s
+          %td= wall.title
+          %td.year= wall.year
+          %td.location= wall.location
+          %td.actions
+            = link_to 'Edit', edit_wall_path(wall)
+            = link_to 'Destroy', wall, method: :delete, data: { confirm: 'Are you sure?' }
+
+
+  .actions
+    = link_to 'New wall', new_wall_path, class: 'btn'

@@ -14,9 +14,16 @@ Rails.application.routes.draw do
         post :sort
       end
     end
+
+    resources :walls do
+      collection do
+        post :sort
+      end
+    end
     
   end
 
+  get '/walls' => 'static#walls'
   get '/admin' => 'static#admin'
 
   controller :sessions do

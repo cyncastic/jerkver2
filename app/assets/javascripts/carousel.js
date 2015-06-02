@@ -82,6 +82,7 @@ var setCarousel = function () {
 
   // Have the jerkbox load on clicks
   $('.artwork-link a').click(function (e) {
+    e.preventDefault();
 
     var t = document.querySelector('#jerkbox'),
       clone,
@@ -89,10 +90,18 @@ var setCarousel = function () {
 
     // Populate the src.
     t.content.querySelector('img').src = this.href;
-    t.content.querySelector('li.title').textContent  = this.getAttribute('data-title');
-    t.content.querySelector('li.size').textContent   = this.getAttribute('data-size');
-    t.content.querySelector('li.year').textContent   = this.getAttribute('data-year');
-    t.content.querySelector('li.medium').textContent = this.getAttribute('data-medium');
+    t.content.querySelector('li.title').textContent    = this.getAttribute('data-title');
+    t.content.querySelector('li.year').textContent     = this.getAttribute('data-year');
+
+    if (t.content.querySelector('li.location')) {
+      t.content.querySelector('li.location').textContent = this.getAttribute('data-location');
+    }
+    if (t.content.querySelector('li.size')) {
+      t.content.querySelector('li.size').textContent     = this.getAttribute('data-size');
+    }
+    if (t.content.querySelector('li.medium')) {
+      t.content.querySelector('li.medium').textContent   = this.getAttribute('data-medium');
+    }
 
     clone = document.importNode(t.content, true);
     document.body.appendChild(clone);
@@ -101,7 +110,6 @@ var setCarousel = function () {
       document.querySelector('.jerkbox').remove();
     }, false);
 
-
     $(document).keyup(function (e) {
       // escape key maps to keycode `27`
       if (e.keyCode === 27 && document.querySelector('.jerkbox')) {
@@ -109,8 +117,8 @@ var setCarousel = function () {
       }
     });
 
-    e.preventDefault();
   });
+
 
 };
 

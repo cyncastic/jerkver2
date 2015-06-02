@@ -1,0 +1,24 @@
+= form_for(@wall) do |f|
+  - if @wall.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@wall.errors.count, "error")
+        prohibited this wall from being saved:
+      %ul
+        - @wall.errors.full_messages.each do |msg|
+          %li= msg
+          
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :location
+    = f.text_field :location
+  .field
+    = f.label :year
+    = f.select :year, (Time.now.year-3..Time.now.year).to_a.reverse, { prompt: false }
+  .field
+    = f.label :image
+    = f.file_field :image
+  .actions
+    = f.submit
