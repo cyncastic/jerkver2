@@ -3,12 +3,9 @@ class WallsController < ApplicationController
 
   # GET /walls
   def index
-    @walls = Wall.all
+    @walls = Wall.all.order("position")
   end
 
-  # GET /walls/1
-  def show
-  end
 
   # GET /walls/new
   def new
@@ -22,9 +19,7 @@ class WallsController < ApplicationController
   # POST /walls
   def create
     @wall = Wall.new(wall_params)
-
     if @wall.save
-
       if params[:wall][:image]
         render :crop
       else
@@ -48,6 +43,13 @@ class WallsController < ApplicationController
   def destroy
     @wall.destroy
     redirect_to walls_url, notice: 'Wall was successfully destroyed.'
+  end
+
+  def sort
+    params[:wall].each_with_index do |id, index|
+      Wall.where(id: id).update_all(position: index+1)
+    end
+    render nothing: true
   end
 
   private
