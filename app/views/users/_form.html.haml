@@ -7,14 +7,17 @@
       %ul
         - @user.errors.full_messages.each do |msg|
           %li= msg
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :password
-    = f.password_field :password
-  .field
-    = f.label :password_confirmation, 'Confirm'
-    = f.password_field :password_confirmation
+
+  %fieldset    
+    .field
+      = f.label :name
+      = f.text_field :name
+    .field
+      = f.label :password
+      = f.password_field :password
+    .field
+      = f.label :password_confirmation, 'Confirm'
+      = f.password_field :password_confirmation
   .actions
+    = link_to 'Back', users_path
     = f.submit class: 'btn'

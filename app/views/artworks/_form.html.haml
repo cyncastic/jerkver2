@@ -7,21 +7,22 @@
       %ul
         - @artwork.errors.full_messages.each do |msg|
           %li= msg
-          
-  .field
-    = f.label :category_id
-    = f.collection_select(:category_id, Category.all, :id, :name, { selected: params[:category_id] })
-  .field
-    = f.label :title
-    = f.text_field :title
-  .field
-    = f.label :medium
-    = f.text_field :medium, value: 'Acrylic on Canvas'
-  .field
-    = f.label :year
-    = f.select :year, (Time.now.year-3..Time.now.year).to_a.reverse, { prompt: false }
-  .field
-    = f.label :image
-    = f.file_field :image
+  %fieldset    
+    .field
+      = f.label :category_id
+      = f.collection_select(:category_id, Category.all, :id, :name, { selected: params[:category_id] })
+    .field
+      = f.label :title
+      = f.text_field :title
+    .field
+      = f.label :medium
+      = f.text_field :medium, value: 'Acrylic on Canvas'
+    .field
+      = f.label :year
+      = f.select :year, (Time.now.year-3..Time.now.year).to_a.reverse, { prompt: false }
+    .field
+      = f.label :image
+      = f.file_field :image
   .actions
+    = link_to 'Back', artworks_path
     = f.submit

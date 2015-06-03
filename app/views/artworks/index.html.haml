@@ -20,9 +20,8 @@
             %td.medium= artwork.medium
             %td.actions
               = link_to 'Edit', edit_artwork_path(artwork)
-              = link_to 'Destroy', artwork, method: :delete, data: { confirm: 'Are you sure?' }
-
-
-
+              = link_to 'Destroy', artwork, method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete'
+              
   .actions
-    = link_to 'New Artwork', new_artwork_path, class: 'btn'
+    = link_to 'Back', admin_path
+    = link_to 'New Artwork', new_artwork_path

@@ -18,8 +18,8 @@
           %td.location= wall.location
           %td.actions
             = link_to 'Edit', edit_wall_path(wall)
-            = link_to 'Destroy', wall, method: :delete, data: { confirm: 'Are you sure?' }
-
+            = link_to 'Destroy', wall, method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete'
 
   .actions
-    = link_to 'New wall', new_wall_path, class: 'btn'
+    = link_to 'Back', admin_path
+    = link_to 'New wall', new_wall_path

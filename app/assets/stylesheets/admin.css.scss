@@ -3,23 +3,34 @@
 //
 
 section.admin{
+
+  font-size: 1em;
   color: $grey-darker;
   background: white;
   padding: 0 1em 1em;
   border: 1px $grey-med solid;
-  border-radius: 2px;
+  border-radius: 6px;
 
-  h1{ font-size: 2em; line-height: 1.5em; margin-bottom: .5em;  }
+  h1{ font-size: 2em; line-height: 1.5em;  }
   h2{ font-size: 1.25em; line-height: 1.25em; }
 
   ul{ padding: 0 1em 1em; }
 
+  a{
+    color: $blue;
+    &.logout{ 
+      display: block;
+      color: $pink; 
+      text-align: right; }
+  }
+
+
   table{
+    margin-bottom: 1em;
     width: 100%;
     text-align: left;
     background: white;
     border: 1px solid $grey-med;
-    margin-bottom: 1em;
     td, th{ 
       padding: .25em;
       border-bottom: 1px $grey-light dotted;
@@ -35,19 +46,58 @@ section.admin{
     }
     td{ font-size: .9em; }
   }
-
-
-  a{
-    color: $blue;
-    &.logout{ 
-      display: block;
-      color: $pink; 
-      text-align: right; }
+ 
+  fieldset{
+    background: $grey-light;
+    padding: 1em;
   }
 
   label{
-    display: inline-block;
-    width: $cols2;
+    display:block;
+  }
+
+  input, select{ margin-bottom: 1em; font-size: 1.25em; }
+
+  fieldset input{
+    display: block;
+    width: 100%;
+    padding: .25em;
+    &[type=file]{
+      width: $cols4;
+      width: 100%;
+    }
+  }
+
+  div.actions{
+    font-size: 1.125em;
+    display: flex;
+    justify-content: space-between;
+    text-align: right;
+    margin-top: 1em;
+    > a, > input[type=submit]{
+      font-size: 1em;
+      border: none;
+      border-radius: .125em;
+      color: white;
+      background: $blue;
+      padding: .5em 1em;
+      margin: 0;
+      height: auto;
+      line-height: 1.125em;
+      &:hover{
+        background: #3cb0fd;
+        text-decoration: none;
+      }
+      &.delete{ color: red; }
+    }
+  }
+
+  td.actions{
+    background: $grey-light;
+    a.delete{ 
+      display: block;
+      color: red;
+    }
   }
 
 }
