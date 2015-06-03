@@ -21,6 +21,10 @@ AvatarCropper = (function() {
   }
 
   AvatarCropper.prototype.update = function(coords) {
+    $('#wall_crop_x').val(coords.x);
+    $('#wall_crop_y').val(coords.y);
+    $('#wall_crop_w').val(coords.w);
+    $('#wall_crop_h').val(coords.h);
     $('#artwork_crop_x').val(coords.x);
     $('#artwork_crop_y').val(coords.y);
     $('#artwork_crop_w').val(coords.w);
