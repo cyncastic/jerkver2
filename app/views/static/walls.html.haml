@@ -2,15 +2,12 @@
 
   %h2= year
 
-  .artwork-conveyor{ class: year }
-    %a.toggle.prev &laquo;
-    %a.toggle.next &raquo;
+  %ul.walls
+    - Wall.where(:year => year).each_with_index do |artwork, index|
+      %li.artwork-link{ class: ('is-ref' if index==Wall.where(:year => year).length-1)}
+        %a.loading{ href: artwork.image_url(:large).to_s, data: { title: artwork.title, year: artwork.year, location: artwork.location }}
+          %img{ src: artwork.image_url(:thumb).to_s, alt: artwork.title}
 
-    %ul.is-set
-      - Wall.where(:year => year).each_with_index do |artwork, index|
-        %li.artwork-link{ class: ('is-ref' if index==Wall.where(:year => year).length-1)}
-          %a.loading{ href: artwork.image_url(:large).to_s, data: { title: artwork.title, year: artwork.year, location: artwork.location }}
-            %img{ src: artwork.image_url(:thumb).to_s, alt: artwork.title}
 %template#jerkbox
   .jerkbox
     %a.prev &laquo;

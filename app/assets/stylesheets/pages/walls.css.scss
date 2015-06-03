@@ -1,0 +1,7 @@
+.walls{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  li { margin-bottom: 24px; margin-right: none; }
+}

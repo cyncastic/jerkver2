@@ -7,14 +7,15 @@
       -webkit-overflow-scrolling: touch;
       overflow: scroll;
     }
-    .artwork-link:last-child{ border: none }
   }
 
-  .no-touch .artwork-conveyor{
-    &:hover{ .prev, .next{ transform: translateX(0); }}
-    > ul.is-set{
-      transform: none!important; // not proude of having to do this...
-      transition: transform .5s cubic-bezier(0.23, 1, 0.32, 1);
+  .no-touch{
+   .artwork-conveyor{
+      &:hover{ .prev, .next{ transform: translateX(0); }}
+      > ul.is-set{
+        transform: none!important; // not proude of having to do this...
+        transition: transform .5s cubic-bezier(0.23, 1, 0.32, 1);
+      }
     }
     .artwork-link{
       order: 2;
@@ -54,11 +55,14 @@
       display: table;
       line-height: $cols2;
     }
+
+    .artwork-link{ margin-right: 24px; }
   }
 
   .artwork-link{
     flex-shrink: 0;
-    border-right: 24px solid $grey-light;
+    
+    &:last-child{ margin-right: none }
     > a{
       position: relative;
       z-index: 100;
