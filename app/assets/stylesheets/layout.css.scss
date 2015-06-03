@@ -95,17 +95,17 @@
 
 
 
-  // Cycle through sizes
-  @for $i from 2 through 27 {
-    @media screen and (min-width: ($i * ($column + $gutter) - $gutter) / $em) { 
-      .container[role="main"]:before{ content: 'cols' + $i; }
-    }
-  }
-  .container[role="main"]:before{
-    position: fixed;
-    top: 0; left: 0;
-    padding: 0 .5em;
-    color: $pink;
-  }
+  // // Cycle through sizes
+  // @for $i from 2 through 27 {
+  //   @media screen and (min-width: ($i * ($column + $gutter) - $gutter) / $em) { 
+  //     .container[role="main"]:before{ content: 'cols' + $i; }
+  //   }
+  // }
+  // .container[role="main"]:before{
+  //   position: fixed;
+  //   top: 0; left: 0;
+  //   padding: 0 .5em;
+  //   color: $pink;
+  // }
 
 
