@@ -2,6 +2,19 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
-  li { margin-bottom: 24px; margin-right: none; }
+  justify-content: flex-start;
+  margin-left: -24px;
+  li { margin-bottom: 24px; margin-left: 24px; background: white; }
 }
+
+
+
+
+// Media Queries
+
+// @media (min-width: $cols5)  { .walls li:nth-child(2n+2){ margin-right: 0; }}
+// @media (min-width: $cols6)  { .walls li:nth-child(3n+3){ margin-right: 0; }}
+// @media (min-width: $cols9)  { .walls li:nth-child(4n+4){ margin-right: 0; }}
+// @media (min-width: $cols10) { .walls li:nth-child(4n+4){ margin-right: 0; }}
+// @media (min-width: $cols18) { .walls li:nth-child(4n+4){ margin-right: 0; }}
+// @media (min-width: $cols27) { .walls li:nth-child(4n+4){ margin-right: 0; }}

@@ -16,11 +16,14 @@
         transform: none!important; // not proude of having to do this...
         transition: transform .5s cubic-bezier(0.23, 1, 0.32, 1);
       }
+      .artwork-link{
+        order: 2;
+        &.is-ref{ order: 1; }
+      }
     }
-    .artwork-link{
-      order: 2;
-      &.is-ref{ order: 1; }
-      a:hover > img{ filter: none; transform: scale(1.33); transition : all .125s; }
+    .artwork-link a:hover > img{ 
+      filter: none; transform: scale(1.33); 
+      transition : all .125s; 
     }
   }
 
