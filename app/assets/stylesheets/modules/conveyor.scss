@@ -100,8 +100,8 @@
       }
     }
     .artwork-link > a { 
-      width:  ($cols5  / 2) - ($gutter * .5    )/$em; 
-      height: ($cols5  / 2) - ($gutter * .5    )/$em; 
+      width:  ($cols5  / 2) - ($gutter * .5)/$em; 
+      height: ($cols5  / 2) - ($gutter * .5)/$em; 
     }
   }
   
@@ -121,10 +121,10 @@
   
   @media (min-width: $cols9)  { 
     .no-touch .artwork-conveyor ul{
-      left:                (     ($cols8 / 3) + ($gutter * .33) / $em ) * -1;
-      transform: translateX(     ($cols8 / 3) + ($gutter * .33) / $em );
+      left:                (     ($cols8 / 3) + ($gutter * .334) / $em ) * -1;
+      transform: translateX(     ($cols8 / 3) + ($gutter * .334) / $em );
       &.is-reversing{
-        transform: translateX( ( ($cols8 / 3) + ($gutter * .33) / $em ) * -1 );
+        transform: translateX( ( ($cols8 / 3) + ($gutter * .334) / $em ) * -1 );
       }
     }
     .artwork-link > a { 
@@ -149,19 +149,19 @@
   
   @media (min-width: $cols18) { 
     .no-touch .artwork-conveyor ul{
-      left:                (     ($cols17 / 6) + ($gutter * -.33) / $em ) * -1;
-      transform: translateX(     ($cols17 / 6) + ($gutter * -.33) / $em );
+      left:                (     ($cols17 / 6) + ($gutter * -.667) / $em ) * -1;
+      transform: translateX(     ($cols17 / 6) + ($gutter * -.667) / $em );
       &.is-reversing{
-        transform: translateX( ( ($cols17 / 6) + ($gutter * -.33) / $em ) * -1 );
+        transform: translateX( ( ($cols17 / 6) + ($gutter * -.667) / $em ) * -1 );
       }
     }
     .no-touch .artwork-link > a { 
-      width: ($cols17 / 6) - ($gutter * 1.334 )/$em; 
-      height: ($cols17 / 6) - ($gutter * 1.334 )/$em; 
+      width:  ($cols17 / 6) - ($gutter * 1.334)/$em; 
+      height: ($cols17 / 6) - ($gutter * 1.334)/$em; 
     }
   }
   
-  @media (min-width: $cols27) { .artwork-link > a { width: ($cols26 / 9) - ($gutter * 2.667 )/$em; height: ($cols26 / 9) - ($gutter * 2.667 )/$em; }}
+  // @media (min-width: $cols27) { .artwork-link > a { width: ($cols26 / 9) - ($gutter * 2.667 )/$em; height: ($cols26 / 9) - ($gutter * 2.667 )/$em; }}
 
 
 
