@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get 'work' => 'static#artwork'
   get 'contact' => 'static#contact'
+  get 'instagram' => 'static#instagram'
 
   scope "/admin" do
 
