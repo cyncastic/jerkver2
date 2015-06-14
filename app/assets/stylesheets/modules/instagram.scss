@@ -57,7 +57,9 @@
 
 @media (min-width: $cols5)  { #instafeed img{ width: ($cols5  / 2) - ($gutter * .5    )/$em; }}
 @media (min-width: $cols6)  { #instafeed img{ width: ($cols6  / 2) - ($gutter * .5    )/$em; }}
-@media (min-width: $cols9)  { #instafeed img{ width: ($cols8  / 2) - ($gutter * .5  )/$em; }}
-@media (min-width: $cols10) { #instafeed img{ width: ($cols9  / 3) - ($gutter * .667   )/$em; }}
-@media (min-width: $cols18) { #instafeed img{ width: ($cols17 / 3) - ($gutter * 1.667 )/$em; }}
+@media (min-width: $cols9)  { #instafeed img{ width: ($cols8  / 2) - ($gutter * .5    )/$em; }}
+@media (min-width: $cols10) { #instafeed img{ width: ($cols9  / 3) - ($gutter * .667  )/$em; }}
+@media (min-width: $cols13) { #instafeed img{ width: ($cols12 / 4) - ($gutter * .75   )/$em; }}
+@media (min-width: $cols15) { #instafeed img{ width: ($cols14 / 4) - ($gutter * .75   )/$em; }}
+@media (min-width: $cols18) { #instafeed img{ width: ($cols17 / 5) - ($gutter * 1.5   )/$em; }}
 @media (min-width: $cols27) { #instafeed img{ width: ($cols26 / 9) - ($gutter * 2.667 )/$em; }}

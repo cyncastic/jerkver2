@@ -43,6 +43,7 @@
     margin: 0 auto;
     min-height: 100vh;
     width: $cols3;
+    border: 1px red dashed;
   }
 
   .footer{
@@ -59,6 +60,7 @@
 //---------------------------------------------------------------------------------------------
   
   @media (max-width: 335px ) {
+    .container[role="main"]:before{ content: 'smallest'; }
     .header{
       > h1{ line-height: 1.5em; }
       margin-bottom: 1em;
@@ -66,30 +68,35 @@
     .nav-link{ text-align: center; line-height: 1em; }
   }
 
-  @media (min-width: $cols5) { // Galaxy S5 Portrait
+  @media (min-width: $cols5) { //             Galaxy S5 Portrait
+    .container[role="main"]:before{ content: 'Galaxy S5 Portrait'; }
     .container[role="main"]{ width: $cols5; }
     .header{ line-height: 2em; }
-    .nav-link{ display: inline;
-      &:after{
-        content: " /";
-      }
+    .nav-link{ 
+      display: inline;
+      &:after            { content: " /"; }
       &:last-child:after { content: none; }
     }
   }
 
-  @media (min-width: $cols6) { 
+  @media (min-width: $cols6) { //             iPhone 6+
+    .container[role="main"]:before{ content: 'iPhone 6+'; }
     .container[role="main"]{ width: $cols6; } 
   }
 
-  @media (min-width: $cols9) { // Galaxy S5 Landscape
+  @media (min-width: $cols9) { //             Galaxy S5 Landscape
+    .container[role="main"]:before{ content: 'Galaxy S5 Landscape'; }
     .container[role="main"]{ width: $cols8; }
     .header{ flex-direction: row; margin-bottom: 1em; }
     .header > h1{ transform: translateX(-$gutter) }
   }
 
   @media (min-width: $cols10) { .container[role="main"]{ width: $cols9; } }
+  @media (min-width: $cols13) { .container[role="main"]{ width: $cols12; } }
+  @media (min-width: $cols15) { .container[role="main"]{ width: $cols14; } }
 
-  @media (min-width: $cols18) { // MBP 13" Fullscreen
+  @media (min-width: $cols18) { //            MBP 13" Fullscreen
+    .container[role="main"]:before{ content: 'MBP 13" Fullscreen'; }
     .container[role="main"]{ width: $cols16; }
   }
 
