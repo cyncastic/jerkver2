@@ -135,29 +135,29 @@
 
   @media (min-width: $cols10) { 
     .no-touch .artwork-conveyor ul{
-      left:                (     ($cols9 / 4) + ($gutter * .25) / $em ) * -1;
-      transform: translateX(     ($cols9 / 4) + ($gutter * .25) / $em );
+      left:                (     ($cols9 / 3) + ($gutter * .334) / $em ) * -1;
+      transform: translateX(     ($cols9 / 3) + ($gutter * .334) / $em );
       &.is-reversing{
-        transform: translateX( ( ($cols9 / 4) + ($gutter * .25) / $em ) * -1 );
+        transform: translateX( ( ($cols9 / 3) + ($gutter * .334) / $em ) * -1 );
       }
     }
     .artwork-link > a { 
-      width:  ($cols9 / 4) - ($gutter * .75)/$em; 
-      height: ($cols9 / 4) - ($gutter * .75)/$em; 
+      width:  ($cols9 / 3) - ($gutter * .667)/$em; 
+      height: ($cols9 / 3) - ($gutter * .667)/$em; 
     }
   }
 
   @media (min-width: $cols13) { 
     .no-touch .artwork-conveyor ul{
-      left:                (     ($cols12 / 5) + ($gutter * .2) / $em ) * -1;
-      transform: translateX(     ($cols12 / 5) + ($gutter * .2) / $em );
+      left:                (     ($cols12 / 4) + ($gutter * .25) / $em ) * -1;
+      transform: translateX(     ($cols12 / 4) + ($gutter * .25) / $em );
       &.is-reversing{
-        transform: translateX( ( ($cols12 / 5) + ($gutter * .2) / $em ) * -1 );
+        transform: translateX( ( ($cols12 / 4) + ($gutter * .25) / $em ) * -1 );
       }
     }
     .artwork-link > a { 
-      width:  ($cols12 / 5) - ($gutter * .8)/$em; 
-      height: ($cols12 / 5) - ($gutter * .8)/$em; 
+      width:  ($cols12 / 4) - ($gutter * .75)/$em; 
+      height: ($cols12 / 4) - ($gutter * .75)/$em; 
     }
   }
 
