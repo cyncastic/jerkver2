@@ -85,8 +85,7 @@ var setCarousel = function () {
     e.preventDefault();
 
     var t = document.querySelector('#jerkbox'),
-      clone,
-      addOpen;
+      clone;
 
     // Populate the src.
     t.content.querySelector('img').src = this.href;
