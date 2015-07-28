@@ -11,17 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150601200719) do
-
-  create_table "abstrakts", force: :cascade do |t|
-    t.string   "title",                  null: false
-    t.string   "medium",                 null: false
-    t.integer  "year",                   null: false
-    t.string   "image",                  null: false
-    t.integer  "position",   default: 0
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-  end
+ActiveRecord::Schema.define(version: 20150728225247) do
 
   create_table "artworks", force: :cascade do |t|
     t.integer  "category_id",             null: false
