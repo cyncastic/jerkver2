@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150728225247) do
+ActiveRecord::Schema.define(version: 20150729020231) do
 
   create_table "artworks", force: :cascade do |t|
     t.integer  "category_id",             null: false
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20150728225247) do
     t.integer  "height",     null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean  "show"
   end
 
   create_table "users", force: :cascade do |t|

@@ -16,6 +16,9 @@
     .field
       = f.label :height
       = f.text_field :height
+    .field.checkbox
+      = f.label :show
+      = f.check_box :show
 
   .actions
     = link_to 'Back', categories_path

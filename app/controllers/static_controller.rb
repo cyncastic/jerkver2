@@ -6,7 +6,7 @@ class StaticController < ApplicationController
   end
 
   def artwork
-    @categories = Category.all.sort_by(&:area)
+    @categories = Category.where(show: true).sort_by(&:area)
   end
 
   def walls
