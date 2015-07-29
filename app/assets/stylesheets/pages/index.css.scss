@@ -1,3 +1,36 @@
 //---------------------------------------------------------------------------------------------
 //  Index
 //---------------------------------------------------------------------------------------------
+
+.home{
+
+  h1{
+    font-size: 2em;
+    line-height: 1.5em;
+  }
+
+  date{ display: none; }
+  
+  .img_holder, .img_bg, .img img{ height: 90vmin; }
+  .img_bg, .img {    width:  100%; }
+
+  .img_holder{ 
+    overflow: hidden;
+    width: 100%;
+  }
+  .img_bg{
+    margin-bottom: -90vmin;
+    background-size: 133%;
+    filter: blur(20px) grayscale(50%) brightness(350%);
+  }
+  .img{
+    text-align: center;
+    position: absolute; 
+  }
+  img{
+    max-width:  60vmin;
+  }
+
+  p{ background: white; padding: .5em;}
+
+}

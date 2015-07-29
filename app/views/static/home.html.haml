@@ -1,0 +1,13 @@
+.home
+
+  %h1= @blog.title
+  %date= @blog.posted
+
+  .img_holder
+    .img_bg
+    .img=image_tag @blog.img
+
+= @blog.post.html_safe
+
+:css
+  .home .img_bg{ background-image: url('#{ @blog.img }'); }
