@@ -4,20 +4,20 @@
   
   %h2 Add Content
   %ul
-    %li= link_to 'Artwork', new_artwork_path
-    %li= link_to 'Wall', new_wall_path
+    %li= link_to 'New Blog', new_blog_path 
+    %li= link_to 'New Artwork', new_artwork_path
+    %li= link_to 'New Wall', new_wall_path
 
   %h2 Manage Content
   %ul
-    / %li= link_to 'Blog', blogs_path 
-    %li= link_to 'Categories List', categories_path 
+    %li= link_to 'Blog List', blogs_path 
     %li= link_to 'Artwork List', artworks_path 
     %li= link_to 'Wall List', walls_path 
 
   %h2 Settings
   %ul
     %li= link_to 'Users', users_path 
-    / %li= link_to 'Categories', categories_path 
+    %li= link_to 'Categories', categories_path 
 
 
   %a= link_to 'Logout', logout_path, class: 'logout', method: :delete 

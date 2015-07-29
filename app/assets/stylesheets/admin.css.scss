@@ -2,7 +2,10 @@
 // Pull the typography and color information out of this. 
 //
 
+.admin_sections{ display: flex; width: 100%;}
+
 section.admin{
+  position: relative;
 
   max-width: $cols12;
   margin: 0 auto;
@@ -16,6 +19,8 @@ section.admin{
 
   h1{ font-size: 2em; line-height: 1.75em;  }
   h2{ font-size: 1.25em; line-height: 1.25em; }
+  
+  .image img{ max-width: 100%; }
 
   ul{ padding: 0 1em 1em; }
 
