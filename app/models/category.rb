@@ -5,7 +5,11 @@ class Category < ActiveRecord::Base
   def name
     width.to_s + 'x' +height.to_s
   end
-  
+
+  def area
+    width * height
+  end
+
   before_destroy :ensure_category_has_no_artwork
 
   private
