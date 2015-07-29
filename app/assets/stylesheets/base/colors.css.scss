@@ -17,6 +17,8 @@
   body{ color: $grey-dark; }
   a{    color: $grey-med;  }
 
+  p#notice{ color: $pink; background: $grey-light; padding: .25em .5em; }
+
   .header > h1 > a{ color: $grey-med; }
 
   .nav-link{

@@ -48,6 +48,10 @@ section.admin{
       &.category{ text-align: center; }
     }
     td{ font-size: .9em; }
+    td.actions {
+      width: 1px;
+      white-space: nowrap;
+    }
   }
  
   fieldset{

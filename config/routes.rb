@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :categories
+
   root 'static#home'
 
   get 'work' => 'static#artwork'
