@@ -1,5 +1,5 @@
 class DestroyAbstrakts < ActiveRecord::Migration
   def change
-    drop_table :abstrakts
+    # drop_table :abstrakts
   end
 end
