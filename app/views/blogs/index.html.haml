@@ -1,0 +1,20 @@
+%section.admin
+  %h1 Listing Blogs
+  %table
+    %thead
+      %tr
+        %th Title
+        %th Post
+        %th Posted
+        %th
+    %tbody
+      - @blogs.each do |blog|
+        %tr
+          %td= link_to blog.title, blog
+          %td= blog.post
+          %td= blog.posted
+          %td.actions
+            = link_to 'Edit', edit_blog_path(blog)
+            = link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete'
+
+  = link_to 'New Blog', new_blog_path
