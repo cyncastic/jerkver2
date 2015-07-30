@@ -17,7 +17,7 @@
       position: absolute;
       z-index: 1000;
       color: white;
-      background: rgba(58,58,50,.9);
+      background: rgba(58,58,50,.5);
       padding: .25em;
       opacity: 1;
       transition: opacity 5s;
@@ -43,14 +43,20 @@
 #load-more{
   border: none;
   border-radius: 0;
-  margin: 0 auto;
+  margin: 0 auto 1em;
   width: $cols2;
   color: $grey-dark;
-  background: $grey-med;
-  font-size: 2em;
+  background: $grey-light;
+  font-size: 1.5em;
   width: 100%;
   cursor: pointer;
-
+  text-transform: uppercase;
+  border-radius: .125em;
+  transition: background .2s;
+  &:hover{
+    background: $grey-med;
+    color: white;
+  }
 }
 
 // Media Queries
