@@ -4,14 +4,12 @@
     %thead
       %tr
         %th Title
-        %th Post
         %th Posted
         %th
     %tbody
       - @blogs.each do |blog|
         %tr
           %td= link_to blog.title, blog
-          %td= blog.post
           %td= blog.posted
           %td.actions
             = link_to 'Edit', edit_blog_path(blog)

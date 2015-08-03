@@ -21,10 +21,11 @@
       cursor: pointer;
       &:hover{ color: $grey-darker; }
       &.close{ 
-        position: absolute; 
+        //position: absolute;
+        display: none;
+        align-self: flex-end;
+        top: 2em; right: 2em;
         font-weight: 400;
-        position: absolute;
-        top: -2em; right: -2em;
         border-radius: 5em;
         padding: 1em;
         line-height: .5em;
@@ -36,19 +37,22 @@
   }
 
   .jerkbox-img{
-    position: relative;
     flex-shrink: 0;
     > img{
-      max-width:  80vmin;
-      max-height: 80vmin;
+      max-width:  90vw;
+      // max-height: 80vh;
     }
   }
 
   .jerkbox-details{ 
     display: block;
     text-align: right;
+    position: fixed;
+    bottom: 0;
+    background: white;
+    width: 90vw;
+    padding: .5em 0;
     > li{
-      font-size: 2.125vmin;
       display: inline-block;
       &:after{ content: " /"; }
       &:last-child:after{ content: none; }
@@ -57,7 +61,7 @@
   
 
   @keyframes jerkfadein {
-    0%   { opacity: 0; transform: rotate(11.25deg) scale(.75); }
+    0%   { opacity: 0; transform: scale(.75); }
     33%  { transform: none; }
     100% { opacity: 1; }
   }
