@@ -11,7 +11,7 @@ class StaticController < ApplicationController
   end
 
   def walls
-    @years = Wall.uniq.pluck(:year)
+    @years = Wall.uniq.pluck(:year).sort_by(&:year).reverse
   end
 
   def contact
