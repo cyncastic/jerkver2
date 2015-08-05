@@ -13,7 +13,7 @@ class JerkfaceUploader < CarrierWave::Uploader::Base
   end
 
   version :large do
-    process :resize_to_limit => [1272, 1272]
+    process :resize_to_limit => [960, 960]
   end
 
   version :thumb do
