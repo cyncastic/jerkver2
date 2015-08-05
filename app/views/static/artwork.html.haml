@@ -3,8 +3,8 @@
 
     %h2= category.name
 
-    .artwork-conveyor{ class: category.name }
-      - if category.artworks.count > 2
+    %div{ class: (category.artworks.count < 7 ? 'artwork-list' : 'artwork-conveyor') }
+      - if category.artworks.count > 6
         %a.toggle.prev &laquo;
         %a.toggle.next &raquo;
 
@@ -13,6 +13,8 @@
           %li.artwork-link{ class: ('is-ref' if index==category.artworks.length-1)}
             %a.loading{ href: artwork.image_url(:large).to_s, data: { title: artwork.title, year: artwork.year, medium: artwork.medium, size: category.name.to_s }}
               %img{ src: artwork.image_url(:thumb).to_s, alt: artwork.title}
+
+
 %template#jerkbox
   .jerkbox
     %a.prev &laquo;
