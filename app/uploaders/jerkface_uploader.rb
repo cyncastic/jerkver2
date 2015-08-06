@@ -14,16 +14,20 @@ class JerkfaceUploader < CarrierWave::Uploader::Base
 
   version :large do
     process :resize_to_limit => [960, 960]
+    process :strip
   end
 
   version :thumb do
     process :crop
     process :resize_to_fill => [336, 336]
+    process :strip
+    process :quality => 5
   end
 
   version :icon do
     process :crop
     process :resize_to_fill => [64, 64]
+    process :strip
   end
 
   def crop
@@ -38,4 +42,25 @@ class JerkfaceUploader < CarrierWave::Uploader::Base
       end
     end
   end
+
+
+
+    # Strips out all embedded information from the image
+    def strip
+      manipulate! do |img|
+        img.strip!
+        img = yield(img) if block_given?
+        img
+      end
+    end
+
+    # Reduces the quality of the image to the percentage given
+    def quality(percentage)
+      manipulate! do |img|
+        img.write(current_path){ self.quality = percentage }
+        img = yield(img) if block_given?
+        img
+      end
+    end
+
 end
