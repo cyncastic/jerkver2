@@ -14,20 +14,16 @@ class JerkfaceUploader < CarrierWave::Uploader::Base
 
   version :large do
     process :strip
-    process :quality => 85
+    process :quality => 100
     process :resize_to_limit => [960, 960]
   end
 
   version :thumb do
-    process :strip
-    process :quality => 85
     process :crop
     process :resize_to_fill => [336, 336]
   end
 
   version :icon do
-    process :strip
-    process :quality => 85
     process :crop
     process :resize_to_fill => [64, 64]
   end
