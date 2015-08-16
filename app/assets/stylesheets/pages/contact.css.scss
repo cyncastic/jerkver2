@@ -4,10 +4,11 @@
     .contact-email{
       text-align: center;
       font-size: 3vw;
-      margin-bottom: 1em;
+      margin: 1em 0 1em;
+      a{ color: $grey-darker; }
     }
 
-    .svg-container svg{ max-height: 90vmin; margin: 0 auto; }
+    .svg-container svg{ max-height: 75vh; margin: 0 auto; }
     .no-touch{
         .svg-blobs{
           filter:url("#fancy-goo");
