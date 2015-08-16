@@ -11,7 +11,7 @@
 
   date{ display: none; }
   
-  .img_holder, .img_bg, .img img{ height: 85vmin; }
+  .img_holder, .img_bg, .img img{ max-width: 100%; }
   .img_bg, .img {    width:  100%; }
 
   .img_holder{ 
