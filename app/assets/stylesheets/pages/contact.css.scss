@@ -8,7 +8,7 @@
       a{ color: $grey-darker; }
     }
 
-    .svg-container svg{ max-height: 75vh; margin: 0 auto; }
+    .svg-container svg{ max-height: 75vh; margin: 0 auto; background: $grey-light; }
     .no-touch{
         .svg-blobs{
           filter:url("#fancy-goo");
