@@ -3,12 +3,11 @@
 //---------------------------------------------------------------------------------------------
     .contact-email{
       text-align: center;
-      font-size: 3vw;
-      margin: 1em 0 1em;
+      font-size: 2vw;
       a{ color: $grey-darker; }
     }
 
-    .svg-container svg{ max-height: 75vh; margin: 0 auto; background: $grey-light; }
+    .svg-container svg{ max-height: 75vh; margin: 0 auto; }
     .no-touch{
         .svg-blobs{
           filter:url("#fancy-goo");

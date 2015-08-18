@@ -41,18 +41,8 @@
 
   .container[role="main"]{
     margin: 0 auto;
-    min-height: 100vh;
     width: $cols3;
     position: relative;
-  }
-
-  .footer{
-    line-height: 1.5em;
-    > p{
-      font-size: .75em;
-      text-align: right;
-      margin-right: .5em;
-    }
   }
 
 //---------------------------------------------------------------------------------------------
@@ -60,7 +50,6 @@
 //---------------------------------------------------------------------------------------------
   
   @media (max-width: 335px ) {
-    .container[role="main"]:before{ content: 'smallest'; }
     .header{
       > h1{ line-height: 1.5em; }
       margin-bottom: 1em;
@@ -69,7 +58,6 @@
   }
 
   @media (min-width: $cols5) { //             Galaxy S5 Portrait
-    .container[role="main"]:before{ content: 'Galaxy S5 Portrait'; }
     .container[role="main"]{ width: $cols5; }
     .header{ line-height: 2em; }
     .nav-link{ 
@@ -80,12 +68,10 @@
   }
 
   @media (min-width: $cols6) { //             iPhone 6+
-    .container[role="main"]:before{ content: 'iPhone 6+'; }
     .container[role="main"]{ width: $cols6; } 
   }
 
   @media (min-width: $cols9) { //             Galaxy S5 Landscape
-    .container[role="main"]:before{ content: 'Galaxy S5 Landscape'; }
     .container[role="main"]{ width: $cols8; }
     .header{ flex-direction: row; margin-bottom: 1em; }
     .header > h1{ transform: translateX(-$gutter) }
@@ -96,23 +82,22 @@
   @media (min-width: $cols15) { .container[role="main"]{ width: $cols14; } }
 
   @media (min-width: $cols18) { //            MBP 13" Fullscreen
-    .container[role="main"]:before{ content: 'MBP 13" Fullscreen'; }
     .container[role="main"]{ width: $cols16; }
   }
 
 
 
   // Cycle through sizes
-  @for $i from 2 through 27 {
-    @media screen and (min-width: ($i * ($column + $gutter) - $gutter) / $em) { 
-      .container[role="main"]:before{ content: 'cols' + $i; }
-    }
-  }
-  .container[role="main"]:before{
-    position: fixed;
-    top: 0; left: 0;
-    padding: 0 .5em;
-    color: $pink;
-  }
+  // @for $i from 2 through 27 {
+  //   @media screen and (min-width: ($i * ($column + $gutter) - $gutter) / $em) { 
+  //     .container[role="main"]:before{ content: 'cols' + $i; }
+  //   }
+  // }
+  // .container[role="main"]:before{
+  //   position: fixed;
+  //   top: 0; left: 0;
+  //   padding: 0 .5em;
+  //   color: $pink;
+  // }
 
 
