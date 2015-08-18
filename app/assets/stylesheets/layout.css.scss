@@ -12,14 +12,14 @@
     flex-direction: column;
     align-items: center;
     > h1{ 
-      font-size: 1.5em;
+      // font-size: 1.5em;
       text-transform: uppercase;
       &:after{
-        content: url(https://s3.amazonaws.com/jerkfacev2/static/drip.svg);
-        display: inline-block;
-        width: 1em;
-        position: absolute;
-        margin: .125em 0 0 .25em;
+        // content: url(https://s3.amazonaws.com/jerkfacev2/static/drip.svg);
+        // display: inline-block;
+        // width: 1em;
+        // position: absolute;
+        // margin: .125em 0 0 .25em;
       }
     }
   }
