@@ -29,7 +29,7 @@
         padding: 1em;
         line-height: .5em;
       }
-      &.prev, &.next{ flex-shrink: 0; font-size: 2em; }
+      &.prev, &.next{ flex-shrink: 0; font-size: 2em; display: none; }
       &.prev{ padding: .5em .25em .5em .5em;  }
       &.next{ padding: .5em .5em  .5em .25em; }
     }
