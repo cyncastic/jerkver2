@@ -64,6 +64,7 @@
       display: inline;
       &:after            { content: " /"; }
       &:last-child:after { content: none; }
+      &.no-slash:after   { content: none; }
     }
   }
 

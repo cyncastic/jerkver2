@@ -13,7 +13,7 @@
     .container{ role: 'main'}
 
       %header.header
-        %h1= link_to 'Jerkface', root_url
+        %h1.nav-link.no-slash= link_to 'Jerkface', root_url, class: cp(root_url)
         %nav.nav
           %ul#nav-list
             / %li.nav-link= link_to 'Home', root_url, class: cp(root_url)
