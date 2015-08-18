@@ -84,8 +84,10 @@ var setCarousel = function () {
   $('.artwork-link a').click(function (e) {
     e.preventDefault();
 
-    var t = document.querySelector('#jerkbox'),
-      clone;
+    var currentCat = this.getAttribute('data-size');
+    var $artworkArray = $('.artwork-link').find("[data-size='" + currentCat + "']");
+
+    var t = document.querySelector('#jerkbox'), clone;
 
     // Populate the src.
     t.content.querySelector('img').src = this.href;
@@ -104,6 +106,11 @@ var setCarousel = function () {
 
     clone = document.importNode(t.content, true);
     document.body.appendChild(clone);
+
+    document.querySelector('.jerkbox .close').addEventListener('click', function () {
+
+    }, false);
+
 
     document.querySelector('.jerkbox .close').addEventListener('click', function () {
       document.querySelector('.jerkbox').remove();
