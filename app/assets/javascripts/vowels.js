@@ -4,7 +4,7 @@ $(document).ready(function ($) {
 
   // add a class of 'vowel' to each vowel using regex
   $navLinks.each(function () {
-    $(this).html($(this).html().replace(/(a|e|i|o|u)/ig, "<span class='vowel'>$1</span>"));
+    $(this).html($(this).html().replace(/(a|e|i|o|u|m)/ig, "<span class='vowel'>$1</span>"));
   });
 
   // capture the width of each vowel
