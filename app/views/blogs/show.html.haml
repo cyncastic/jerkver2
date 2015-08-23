@@ -1,10 +1,6 @@
 %section.admin
   %h1= @blog.title
-  %p= @blog.post
-  %date= @blog.posted
-
   .image=image_tag @blog.img
-
   .actions
     = link_to 'Edit', edit_blog_path(@blog)
     = link_to 'Back', blogs_path
