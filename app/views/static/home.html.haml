@@ -1,6 +1,3 @@
-.home
-
-  / %h1= @blog.title
-
-  .img_holder
-    .img=image_tag @blog.img
+%ul.img_holder
+  - @blogs.each do |blog|
+    %li=image_tag blog.img

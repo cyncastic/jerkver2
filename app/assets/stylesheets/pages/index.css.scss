@@ -2,35 +2,26 @@
 //  Index
 //---------------------------------------------------------------------------------------------
 
-.home{
+.img_holder{
+  position: relative;
+  overflow: hidden;
+  > li{
+    display: inline;
+    > img{
+      width: 100%;
+      position: absolute;
+      top:  0;
+      left: 0;
+    }
 
-  h1{
-    font-size: 2em;
-    line-height: 1.5em;
   }
-
-  date{ display: none; }
-  
-  .img_holder, .img_bg, .img img{ max-width: 100%; }
-  .img_bg, .img {    width:  100%; }
-
-  .img_holder{ 
-    overflow: hidden;
-    width: 100%;
-  }
-  .img_bg{
-    margin-bottom: -85vmin;
-    background-size: 100%;
-    filter: blur(6px) grayscale(75%) brightness(80%);
-  }
-  .img{
-    text-align: center;
-    position: absolute; 
-  }
-  img{
-    max-width:  100%;
-  }
-
-  p{ background: white; padding: .5em;}
-
 }
+
+
+@media (min-width: $cols5)  { .img_holder { width: $cols5;  height: $cols5  * 0.5833333;  }}
+@media (min-width: $cols6)  { .img_holder { width: $cols6;  height: $cols6  * 0.5833333;  }}
+@media (min-width: $cols9)  { .img_holder { width: $cols8;  height: $cols8  * 0.5833333;  }}
+@media (min-width: $cols10) { .img_holder { width: $cols9;  height: $cols9  * 0.5833333;  }}
+@media (min-width: $cols13) { .img_holder { width: $cols12; height: $cols12 * 0.5833333; }}
+@media (min-width: $cols15) { .img_holder { width: $cols14; height: $cols14 * 0.5833333; }}
+@media (min-width: $cols18) { .img_holder { width: $cols17; height: $cols17 * 0.5833333; }}

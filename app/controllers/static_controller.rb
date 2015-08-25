@@ -3,7 +3,7 @@ class StaticController < ApplicationController
   skip_before_filter :authorize, except: [:admin]
 
   def home
-    @blog = Blog.last
+    @blogs = Blog.all
   end
 
   def artwork
