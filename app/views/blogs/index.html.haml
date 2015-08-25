@@ -5,9 +5,9 @@
       %tr
         %th Title
         %th
-    %tbody
+    %tbody.sorts{ data: { update_url: sort_blogs_url } }
       - @blogs.each do |blog|
-        %tr{ class: ("gray" unless blog.visible?) }
+        = content_tag_for :tr, blog, class: ("gray" unless blog.visible?) do
           %td= link_to blog.title, blog
           %td.actions
             = link_to 'Edit', edit_blog_path(blog)

@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :blogs
-
   resources :categories
 
   root 'static#home'
@@ -21,6 +19,12 @@ Rails.application.routes.draw do
     end
 
     resources :walls do
+      collection do
+        post :sort
+      end
+    end
+
+    resources :blogs do
       collection do
         post :sort
       end

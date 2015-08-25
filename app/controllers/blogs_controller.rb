@@ -3,7 +3,7 @@ class BlogsController < ApplicationController
 
   # GET /blogs
   def index
-    @blogs = Blog.all
+    @blogs = Blog.all.order("position")
   end
 
   # GET /blogs/1
@@ -45,6 +45,13 @@ class BlogsController < ApplicationController
     redirect_to blogs_url, notice: 'Blog was successfully destroyed.'
   end
 
+  def sort
+    params[:blog].each_with_index do |id, index|
+      Blog.where(id: id).update_all(position: index+1)
+    end
+    render nothing: true
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_blog
@@ -53,6 +60,6 @@ class BlogsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def blog_params
-      params.require(:blog).permit(:title, :post, :posted, :visible, :img, :crop_x, :crop_y, :crop_w, :crop_h)
+      params.require(:blog).permit(:title, :post, :posted, :visible, :position, :img, :crop_x, :crop_y, :crop_w, :crop_h)
     end
 end
