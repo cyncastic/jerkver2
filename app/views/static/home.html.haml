@@ -1,3 +1,3 @@
-.img_holder
+.img_holder{ class: ('fade' if @blogs.length > 1) }
   - @blogs.each do |blog|
     =image_tag blog.img_url(:large), alt: blog.title
