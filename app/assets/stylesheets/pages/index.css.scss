@@ -3,18 +3,17 @@
 //---------------------------------------------------------------------------------------------
 
 .img_holder{
+
   position: relative;
   overflow: hidden;
-  > li{
-    display: inline;
-    > img{
-      width: 100%;
-      position: absolute;
-      top:  0;
-      left: 0;
-    }
 
+  > img{
+    width: 100%;
+    position: absolute;
+    top:  0;
+    left: 0;
   }
+
 }
 
 
