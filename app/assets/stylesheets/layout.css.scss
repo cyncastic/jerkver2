@@ -77,7 +77,7 @@
 
   @media (min-width: $cols9) { //             Galaxy S5 Landscape
     .container[role="main"]{ width: $cols8; }
-    .header{ flex-direction: row; margin-bottom: 2em; }
+    .header{ flex-direction: row; }
     // .header > h1{ transform: translateX(-$gutter) }
   }
 
