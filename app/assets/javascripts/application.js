@@ -22,4 +22,5 @@ $(document).pjax('.nav-link a', '[data-pjax-container]');
 $(document).on('pjax:success', function () {
   setCarousel();
   instagramPage();
+  jerkSlide();
 });
