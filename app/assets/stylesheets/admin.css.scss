@@ -54,6 +54,9 @@ section.admin{
       &.category{ text-align: center; }
     }
     td{ font-size: .9em; }
+    td.img{
+      width: 1px;
+    }
     td.actions {
       width: 1px;
       white-space: nowrap;

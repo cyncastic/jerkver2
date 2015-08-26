@@ -14,7 +14,7 @@
       %tbody.sorts{ data: { update_url: sort_artworks_url } }
         - category.artworks.each do |artwork|
           = content_tag_for :tr, artwork do
-            %td= image_tag artwork.image_url(:icon).to_s
+            %td.img= image_tag artwork.image_url(:icon).to_s
             %td= artwork.title
             %td.year= artwork.year
             %td.medium= artwork.medium

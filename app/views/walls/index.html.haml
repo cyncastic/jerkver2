@@ -12,7 +12,7 @@
     %tbody.sorts{ data: { update_url: sort_walls_url } }
       - @walls.each do |wall|
         = content_tag_for :tr, wall do
-          %td= image_tag wall.image_url(:icon).to_s
+          %td.img= image_tag wall.image_url(:icon).to_s
           %td= wall.title
           %td.year= wall.year
           %td.location= wall.location
