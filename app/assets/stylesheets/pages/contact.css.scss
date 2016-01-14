@@ -3,8 +3,12 @@
 //---------------------------------------------------------------------------------------------
     .contact-email{
       text-align: center;
-      font-size: 2vw;
-      a{ color: $grey-darker; }
+      font-size: 3vw;
+      margin-top: .5em;
+      a{ color: black; }
+      .pink{
+        color: $pink;
+      }
     }
 
     .svg-container svg{ max-height: 50vh; margin: 0 auto; }
