@@ -1,14 +1,15 @@
 - @categories.each do |category| 
   - if category.artworks.any?
 
-    %h2= category.name
+    / %h2= category.name
 
-    %div{ class: (category.artworks.count < 7 ? 'artwork-list' : 'artwork-conveyor') }
-      - if category.artworks.count > 6
+    %div{ class: (category.artworks.count < 777 ? 'artwork-list' : 'artwork-conveyor') }
+      - if category.artworks.count > 666
         %a.toggle.prev &laquo;
         %a.toggle.next &raquo;
 
-      %ul.is-set
+      / %ul.is-set
+      %ul
         - category.artworks.each_with_index do |artwork, index|
           %li.artwork-link{ class: ('is-ref' if index==category.artworks.length-1)}
             %a.loading{ href: artwork.image_url(:large).to_s, data: { title: artwork.title, year: artwork.year, medium: artwork.medium, size: category.name.to_s }}
