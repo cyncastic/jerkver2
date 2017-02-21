@@ -3,7 +3,7 @@ class WallsController < ApplicationController
 
   # GET /walls
   def index
-    @walls = Wall.all.order("position")
+    @walls = Wall.all
   end
 
 
