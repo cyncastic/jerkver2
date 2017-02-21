@@ -16,7 +16,7 @@ var instagramPage = function(){
         instaFeed = new Instafeed({
 
           userId      : 46255315,
-          accessToken : '408253310.1677ed0.c650b85839fd45c38dc5af6d5ce1db41',
+          accessToken : '46255315.1677ed0.4d1b1cef9f714900b9dae9e3e6e7a2fa',
           get         : 'user',
           resolution  : 'standard_resolution',
           limit       : 6,
