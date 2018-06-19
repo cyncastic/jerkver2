@@ -33,6 +33,7 @@ Rails.application.routes.draw do
   end
 
   get '/walls' => 'static#walls'
+  get '/walls2' => 'static#newv2_walls'
   get '/admin' => 'static#admin'
 
   controller :sessions do

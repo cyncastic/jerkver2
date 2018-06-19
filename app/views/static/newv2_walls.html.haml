@@ -1,0 +1,22 @@
+/ - @years.each do |year| 
+
+/   %h2= year
+
+%ul.walls
+  / - Wall.order("position").where(:year => year).each_with_index do |artwork, index|
+  - Wall.order("position").each_with_index do |artwork, index|
+    %li.artwork-link{ class: ('is-ref' if index==Wall.where(:year => artwork.year).length-1)}
+      %a.loading{ href: artwork.image_url(:large).to_s, data: { title: artwork.title, year: artwork.year, location: artwork.location }}
+        %img{ src: artwork.image_url(:thumb).to_s, alt: artwork.title}
+
+%template#jerkbox
+  .jerkbox
+    %a.prev &laquo;
+    .jerkbox-img
+      %a.close X
+      %img{ src: 'https://s3.amazonaws.com/jerkfacev2/uploads/test/artwork/large_Krangwad_12x12.jpg'}
+      %ul.jerkbox-details
+        %li.title Title
+        %li.location Location
+        %li.year Year
+    %a.next &raquo;
