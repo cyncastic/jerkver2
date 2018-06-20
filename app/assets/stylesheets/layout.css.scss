@@ -33,6 +33,20 @@
     &:hover .vowel{ opacity: 1; }
   }
 
+  .nav-link2.insta{
+    width: 1.5em;
+    content: '';
+    // text-indent: -10000em;
+    &::before{
+      content: url(https://s3.amazonaws.com/jerkfacev2/static/insta.svg);
+      display: inline-block;
+      width: 1em;
+      position: absolute;
+      margin: .125em 0 10em 0;
+      font-size: 1.75em;
+    }
+  }
+
   h2{ font-size: .5em; margin-bottom: .66em; color: $grey-med; }
 
   .container[role="main"]{
@@ -74,7 +88,7 @@
       flex-direction: row; 
       h1{ padding-left: 2.5em; }
       &:before{
-        content: url(https://s3.amazonaws.com/jerkfacev2/static/jfgrey.svg);
+        content: url(https://s3.amazonaws.com/jerkfacev2/static/donut.svg);
         display: inline-block;
         width: 1em;
         position: absolute;
