@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :categories
 
-  root 'static#home'
+  root 'static#newv2_walls'
 
   get 'work' => 'static#artwork'
   get 'contact' => 'static#contact'
