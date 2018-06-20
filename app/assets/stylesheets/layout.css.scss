@@ -72,9 +72,12 @@
     .header{ line-height: 2.5em; }
     .nav-link{ 
       display: inline;
-      &:after            { content: " /"; }
-      &:last-child:after { content: none; }
-      &.no-slash:after   { content: none; }
+      // &:after            { content: " /"; }
+      // &:last-child:after { content: none; }
+      // &.no-slash:after   { content: none; }
+    }
+    img.nav-link{
+      height: 1.75em;
     }
   }
 
@@ -99,15 +102,10 @@
     // .header > h1{ transform: translateX(-$gutter) }
   }
 
-  @media (min-width: $cols10) { .container[role="main"]{ width: $cols9; } }
+  @media (min-width: $cols10) { .container[role="main"]{ width: $cols9;  } }
   @media (min-width: $cols13) { .container[role="main"]{ width: $cols12; } }
   @media (min-width: $cols15) { .container[role="main"]{ width: $cols14; } }
-
-  @media (min-width: $cols18) { //            MBP 13" Fullscreen
-    .container[role="main"]{ width: $cols16; }
-  }
-
-
+  @media (min-width: $cols18) { .container[role="main"]{ width: $cols16; } }
 
   // Cycle through sizes
   // @for $i from 2 through 27 {

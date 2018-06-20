@@ -3,7 +3,7 @@
 
   %head
 
-    %title Jerkface v2
+    %title Jerkface v2.5
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag :modernizr
     = csrf_meta_tags 
@@ -19,8 +19,14 @@
             / %li.nav-link= link_to 'Home', root_url, class: cp(root_url)
             / %li.nav-link= link_to 'Work', work_path, class: cp(work_path)
             / %li.nav-link= link_to 'Walls', '/walls', class: cp('/walls')
-            %li.nav-link= link_to 'Instagram', instagram_path, class: cp(instagram_path)
-            %li.nav-link= link_to 'Contact', contact_path, class: cp(contact_path)
+            / %li.nav-link= link_to 'Instagram', instagram_path, class: cp(instagram_path)
+            / / %li.nav-link= link_to 'Contact', contact_path, class: cp(contact_path)
+            / %li.nav-link= link_to 'Instagram', instagram_path, class: cp(instagram_path)
+            / %li.nav-link= link_to 'Contact', contact_path, class: cp(contact_path)
+            %a{ href: '/contact'}
+              %img.nav-link{ src: 'https://s3.amazonaws.com/jerkfacev2/static/contact.svg'}
+            %a{ href: '/instagram'}
+              %img.nav-link{ src: 'https://s3.amazonaws.com/jerkfacev2/static/insta.svg'}
             - if session[:user_id]
               %li.nav-link= link_to 'Admin', admin_path, class: cp(admin_path)
 
