@@ -23,8 +23,8 @@
             / / %li.nav-link= link_to 'Contact', contact_path, class: cp(contact_path)
             / %li.nav-link= link_to 'Instagram', instagram_path, class: cp(instagram_path)
             / %li.nav-link= link_to 'Contact', contact_path, class: cp(contact_path)
-            %a{ href: '/contact'}
-              %img.nav-link{ src: 'https://s3.amazonaws.com/jerkfacev2/static/contact.svg'}
+            -# %a{ href: '/contact'}
+            -#   %img.nav-link{ src: 'https://s3.amazonaws.com/jerkfacev2/static/contact.svg'}
             %a{ href: 'https://www.instagram.com/incarceratedjerkfaces/'}
               %img.nav-link{ src: 'https://s3.amazonaws.com/jerkfacev2/static/insta.svg'}
             - if session[:user_id]
